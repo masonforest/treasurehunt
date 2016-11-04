@@ -16,13 +16,12 @@ import (
 	"github.com/ethereum/go-ethereum/core"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/stretchr/testify/assert"
 )
 
 var (
 	key0             *ecdsa.PrivateKey
-	key1             *ecdsa.PrivateKey
-	addr0            common.Address
-	addr1            common.Address
+	account0         common.Address
 	auth             *bind.TransactOpts
 	backend          *backends.SimulatedBackend
 	GAS_LIMIT        = big.NewInt(500000)
@@ -32,19 +31,15 @@ var (
 
 func TestMain(m *testing.M) {
 	key0, _ = crypto.GenerateKey()
-	key1, _ = crypto.GenerateKey()
-	addr0 = crypto.PubkeyToAddress(key0.PublicKey)
-	addr1 = crypto.PubkeyToAddress(key1.PublicKey)
+	account0 = crypto.PubkeyToAddress(key0.PublicKey)
 	auth = bind.NewKeyedTransactor(key0)
 	backend = backends.NewSimulatedBackend(
 		core.GenesisAccount{
-			Address: addr0,
+			Address: account0,
 			Balance: STARTING_BALANCE,
 		},
-		core.GenesisAccount{
-			Address: addr1,
-			Balance: STARTING_BALANCE,
-		})
+	)
+
 	flag.Parse()
 	os.Exit(m.Run())
 }
@@ -80,4 +75,16 @@ func deploy() *TreasureHuntSession {
 
 func TestInitializer(t *testing.T) {
 	deploy()
+}
+
+func TestTreasureFound(t *testing.T) {
+	treasureHunt := deploy()
+	var COST_OF_TRANSACTION = big.NewInt(163482)
+	var expectedAmount = big.NewInt(0)
+	expectedAmount.Sub(STARTING_BALANCE, COST_OF_TRANSACTION)
+	expectedAmount.Add(expectedAmount, big.NewInt(100))
+
+	treasureHunt.IsTreasureHere(big.NewInt(100), big.NewInt(100))
+	weiBalance, _ := backend.BalanceAt(nil, account0, nil)
+	assert.Equal(t, expectedAmount, weiBalance)
 }

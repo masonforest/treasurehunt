@@ -1,0 +1,4 @@
+contract TreasureHunt {
+    function TreasureHunt() {
+    }
+}

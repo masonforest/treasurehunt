@@ -47,7 +47,9 @@ app.get('/nextHint', function (req, res) {
   console.log({
     userId: req.query.userId
   });
-  res.send();
+  res.send(JSON.stringify({
+    hint: "Got to the pizza"
+  }));
 })
 
 app.get('/balance', function (req, res) {

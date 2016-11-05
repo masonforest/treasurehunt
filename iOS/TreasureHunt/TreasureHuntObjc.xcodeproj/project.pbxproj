@@ -12,8 +12,6 @@
 		F1452D851DCE15D300A40D46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1452D841DCE15D300A40D46 /* ViewController.m */; };
 		F1452D881DCE15D300A40D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1452D861DCE15D300A40D46 /* Main.storyboard */; };
 		F1452D8A1DCE15D300A40D46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1452D891DCE15D300A40D46 /* Assets.xcassets */; };
-		F1452D8D1DCE15D300A40D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1452D8B1DCE15D300A40D46 /* LaunchScreen.storyboard */; };
-		F1452D971DCE162C00A40D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1452D951DCE162C00A40D46 /* Main.storyboard */; };
 		F1452D981DCE162C00A40D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1452D961DCE162C00A40D46 /* LaunchScreen.storyboard */; };
 		F1452D9D1DCE1C5800A40D46 /* HuntViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1452D9C1DCE1C5800A40D46 /* HuntViewController.m */; };
 		F1452DA01DCE1C7900A40D46 /* TreasureListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1452D9F1DCE1C7900A40D46 /* TreasureListTableViewController.m */; };
@@ -30,9 +28,7 @@
 		F1452D841DCE15D300A40D46 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F1452D871DCE15D300A40D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1452D891DCE15D300A40D46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F1452D8C1DCE15D300A40D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1452D8E1DCE15D300A40D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1452D951DCE162C00A40D46 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F1452D961DCE162C00A40D46 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1452D9B1DCE1C5800A40D46 /* HuntViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuntViewController.h; sourceTree = "<group>"; };
 		F1452D9C1DCE1C5800A40D46 /* HuntViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuntViewController.m; sourceTree = "<group>"; };
@@ -80,9 +76,7 @@
 				F1452D941DCE161F00A40D46 /* Storyboards */,
 				F1452D801DCE15D300A40D46 /* AppDelegate.h */,
 				F1452D811DCE15D300A40D46 /* AppDelegate.m */,
-				F1452D861DCE15D300A40D46 /* Main.storyboard */,
 				F1452D891DCE15D300A40D46 /* Assets.xcassets */,
-				F1452D8B1DCE15D300A40D46 /* LaunchScreen.storyboard */,
 				F1452D8E1DCE15D300A40D46 /* Info.plist */,
 				F1452D7D1DCE15D300A40D46 /* Supporting Files */,
 			);
@@ -100,7 +94,7 @@
 		F1452D941DCE161F00A40D46 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				F1452D951DCE162C00A40D46 /* Main.storyboard */,
+				F1452D861DCE15D300A40D46 /* Main.storyboard */,
 				F1452D961DCE162C00A40D46 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -195,11 +189,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1452D8D1DCE15D300A40D46 /* LaunchScreen.storyboard in Resources */,
 				F1452D8A1DCE15D300A40D46 /* Assets.xcassets in Resources */,
 				F1452D881DCE15D300A40D46 /* Main.storyboard in Resources */,
 				F1452D981DCE162C00A40D46 /* LaunchScreen.storyboard in Resources */,
-				F1452D971DCE162C00A40D46 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,14 +221,6 @@
 				F1452D871DCE15D300A40D46 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F1452D8B1DCE15D300A40D46 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1452D8C1DCE15D300A40D46 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -338,6 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4QGK58U3J6;
 				INFOPLIST_FILE = TreasureHuntObjc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marinosoftware.TreasureHuntObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +335,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4QGK58U3J6;
 				INFOPLIST_FILE = TreasureHuntObjc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marinosoftware.TreasureHuntObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";

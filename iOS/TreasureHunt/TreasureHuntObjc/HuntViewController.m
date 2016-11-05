@@ -8,7 +8,9 @@
 
 #import "HuntViewController.h"
 
-@interface HuntViewController ()
+@interface HuntViewController () {
+    int numberOfLocationRequests;
+}
 
 @end
 
@@ -18,6 +20,7 @@
     [super viewDidLoad];
     
     [self.locationManager setDelegate:self];
+    numberOfLocationRequests = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +45,7 @@
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"API CALL");
         [self.locationManager requestLocation];
+        numberOfLocationRequests = 1;
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
@@ -52,25 +56,28 @@
 }
 
 -(void) didUpdate:(CLLocation*)location {
-     NSURLSession* ourSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    NSMutableURLRequest* someRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://46.101.80.224/"]];
-    [someRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [someRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [someRequest setHTTPMethod:@"POST"];
-    
-    
-    [someRequest setHTTPBody:[NSJSONSerialization dataWithJSONObject:@{@"latitude":[NSNumber numberWithDouble:location.coordinate.latitude], @"longitude":[NSNumber numberWithDouble: location.coordinate.longitude]} options:0 error:nil] ];
-    
-    
-    NSURLSessionTask *task = [ourSession dataTaskWithRequest:someRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (response != nil ) {
-            NSLog(@"%@", response);
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
-    [task resume];
+    if(numberOfLocationRequests > 0) {
+         NSURLSession* ourSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        
+        NSMutableURLRequest* someRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://46.101.80.224/"]];
+        [someRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [someRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [someRequest setHTTPMethod:@"POST"];
+        
+        
+        [someRequest setHTTPBody:[NSJSONSerialization dataWithJSONObject:@{@"latitude":[NSNumber numberWithDouble:location.coordinate.latitude], @"longitude":[NSNumber numberWithDouble: location.coordinate.longitude]} options:0 error:nil] ];
+        
+        
+        NSURLSessionTask *task = [ourSession dataTaskWithRequest:someRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (response != nil ) {
+                NSLog(@"%@", response);
+            } else {
+                NSLog(@"%@", error.localizedDescription);
+            }
+        }];
+        [task resume];
+    }
+    numberOfLocationRequests--;
 }
 
 -(void) didFail {

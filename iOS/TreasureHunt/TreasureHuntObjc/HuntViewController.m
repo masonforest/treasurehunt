@@ -55,7 +55,7 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void) didUpdate:(CLLocation*)location {
+-(void) didUpdateLocation:(CLLocation *)location {
     if(numberOfLocationRequests > 0) {
          NSURLSession* ourSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         

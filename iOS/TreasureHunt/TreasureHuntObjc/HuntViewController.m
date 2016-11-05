@@ -116,20 +116,39 @@
         
         NSURLSessionTask *task = [ourSession dataTaskWithRequest:someRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (response != nil ) {
-                NSLog(@"%@", response);
-                NSLog(@"%@", data);
+                //NSLog(@"%@", response);
+                //NSLog(@"%@", data);
                 
                 NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                 //NSLog(@"%@", jsonDict);
                 
-                NSLog(@"%@", jsonDict[@"found"]);
+                BOOL success = (BOOL)jsonDict[@"success"];
+                
                 dispatch_async(dispatch_get_main_queue(), ^(void){
                     //activityIndicator.hidden = YES;
                     [activityIndicator removeFromSuperview];
-                    //Run UI Updates
-                    self.hintLabel.text = jsonDict[@"hint"];
-                    self.hintLabel.hidden = NO;
-                    self.tryLocationButton.hidden = NO;
+                    
+                    NSString *message = @"";
+                    
+
+                    if(success) {
+                        NSLog(@"success");
+                        message = @"You're at the right location, here's your next hint!";
+                    } else {
+                        NSLog(@"No success");
+                        message = @"Sorry, this is the wrong location. Try again.";
+                    }
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        dispatch_async(dispatch_get_main_queue(), ^(void){
+                                //Run UI Updates
+                                self.hintLabel.text = jsonDict[@"hint"];
+                                self.hintLabel.hidden = NO;
+                                self.tryLocationButton.hidden = NO;
+                            });
+                    }];
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
                 });
             } else {
                 //activityIndicator.hidden = YES;

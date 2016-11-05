@@ -14,6 +14,7 @@
 @property (nonatomic, strong) LocationManager* locationManager;
 
 @property (nonatomic, weak) IBOutlet UILabel* hintLabel;
+@property (weak, nonatomic) IBOutlet UIButton *tryLocationButton;
 
 
 

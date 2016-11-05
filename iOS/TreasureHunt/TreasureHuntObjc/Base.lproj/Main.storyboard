@@ -111,7 +111,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This will be the first hint. It could be something like: &quot;Go to the red dot&quot; Let's see how many words I can fit in here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Em-dj-gd2">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This will be the first hint. It could be something like: &quot;Go to the red dot&quot; Let's see how many words I can fit in here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Em-dj-gd2">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="B8R-B2-Qaq"/>
                                     <constraint firstAttribute="width" constant="343" id="hdT-1q-ZNe"/>
@@ -125,7 +125,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-L7-Ka4">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-L7-Ka4">
                                 <state key="normal" title="Try My Location"/>
                                 <connections>
                                     <action selector="tryLocationButton:" destination="w2f-56-p4p" eventType="touchUpInside" id="PJT-rk-Y5X"/>
@@ -144,6 +144,7 @@
                     </view>
                     <connections>
                         <outlet property="hintLabel" destination="3Em-dj-gd2" id="1Jf-iU-Bz8"/>
+                        <outlet property="tryLocationButton" destination="Nmv-L7-Ka4" id="5OL-PD-0aK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AND-30-E3n" userLabel="First Responder" sceneMemberID="firstResponder"/>

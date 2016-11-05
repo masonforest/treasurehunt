@@ -7,9 +7,11 @@
 //
 
 #import "HuntViewController.h"
+#import "LocationManager.h"
 
 @interface HuntViewController () {
     int numberOfLocationRequests;
+    NSURLSession* ourSession;
 }
 
 @end
@@ -19,8 +21,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.locationManager setDelegate:self];
+    self.locationManager = [[LocationManager alloc] init];
+    self.locationManager.delegate = self;
     numberOfLocationRequests = 0;
+    
+    ourSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    NSMutableURLRequest* someRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://treasurehunt.masonforest.com/nextHint?userId=123"]];
+    [someRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [someRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [someRequest setHTTPMethod:@"GET"];
+    
+    
+    
+    NSURLSessionTask *task = [ourSession dataTaskWithRequest:someRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (response != nil ) {
+            NSLog(@"%@", response);
+            
+            NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            //NSLog(@"%@", jsonDict);
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                
+                //Run UI Updates
+                self.hintLabel.text = jsonDict[@"hint"];
+                self.hintLabel.hidden = NO;
+                self.tryLocationButton.hidden = NO;
+            });
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    [task resume];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +90,6 @@
 
 -(void) didUpdateLocation:(CLLocation *)location {
     if(numberOfLocationRequests > 0) {
-         NSURLSession* ourSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         
         NSMutableURLRequest* someRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://46.101.80.224/"]];
         [someRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -71,7 +103,9 @@
         NSURLSessionTask *task = [ourSession dataTaskWithRequest:someRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (response != nil ) {
                 NSLog(@"%@", response);
+                NSLog(@"%@", data);
             } else {
+                NSLog(@"%@", data);
                 NSLog(@"%@", error.localizedDescription);
             }
         }];

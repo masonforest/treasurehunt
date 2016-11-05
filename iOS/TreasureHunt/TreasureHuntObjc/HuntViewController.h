@@ -11,4 +11,10 @@
 
 @interface HuntViewController : UIViewController <LocationManagerDelegate>
 
+@property (nonatomic, strong) LocationManager* locationManager;
+
+@property (nonatomic, weak) IBOutlet UILabel* hintLabel;
+
+
+
 @end

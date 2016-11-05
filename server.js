@@ -29,6 +29,7 @@ treasureHunt = TreasureHunt.at(CONTRACT_ADDRESS);
 app.get('/nextHint', function (req, res) {
   res.send(JSON.stringify({
     hint: treasureHunt.GetNextHintForPlayer(ACCOUNT_ADDRESS)
+    video: "video1",
   }));
 })
 
@@ -49,7 +50,8 @@ app.post('/', function (req, res) {
     success: true
   });
   res.send(JSON.stringify({
-    hint: "Got to the pizza",
+    hint: "Got to the first floor",
+    video: "video1",
     success: true
   }));
 })

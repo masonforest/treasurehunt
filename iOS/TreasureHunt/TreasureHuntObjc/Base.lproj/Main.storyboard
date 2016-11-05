@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ethereum Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jh6-wf-7WG">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ethereum Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jh6-wf-7WG">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="Jrb-mt-Wau"/>
                                 </constraints>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orangeorion" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ3-ck-RyD"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your Ethereum Address to receive possible prices at. And to pay fees from." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC4-PO-Y0o">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer Ether to your new Ethereum wallet to use the app:0x06b50b1fee1a46d8803d017e6bf363a3f904d8fe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC4-PO-Y0o">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -52,12 +52,20 @@
                             <constraint firstItem="hC4-PO-Y0o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5h2-V3-9Al"/>
                             <constraint firstItem="jh6-wf-7WG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DU1-99-1cx"/>
                             <constraint firstItem="hC4-PO-Y0o" firstAttribute="top" secondItem="ZZ3-ck-RyD" secondAttribute="bottom" constant="120" id="Dwa-GV-wLx"/>
+                            <constraint firstItem="YAf-yE-7cz" firstAttribute="top" secondItem="hC4-PO-Y0o" secondAttribute="bottom" constant="10" id="F9y-WE-U0e"/>
                             <constraint firstItem="YAf-yE-7cz" firstAttribute="top" secondItem="jh6-wf-7WG" secondAttribute="bottom" constant="8" id="RYp-BY-Xdi"/>
+                            <constraint firstItem="hC4-PO-Y0o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SYv-jT-gSJ"/>
                             <constraint firstItem="ZZ3-ck-RyD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sl7-46-o7M"/>
                             <constraint firstItem="hC4-PO-Y0o" firstAttribute="width" secondItem="jh6-wf-7WG" secondAttribute="width" id="hbb-fk-bBn"/>
                             <constraint firstItem="jh6-wf-7WG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pub-Yp-Fes"/>
                             <constraint firstItem="YAf-yE-7cz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uPW-d5-pGi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Dwa-GV-wLx"/>
+                                <exclude reference="RYp-BY-Xdi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Yb3-Yu-f5N"/>
                 </viewController>
@@ -88,7 +96,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="8aZ-q8-usF"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>

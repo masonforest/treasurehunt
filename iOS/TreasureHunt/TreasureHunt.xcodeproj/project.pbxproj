@@ -54,14 +54,38 @@
 		17A06E211DCD3FC6001A1204 /* TreasureHunt */ = {
 			isa = PBXGroup;
 			children = (
+				17A06E361DCDE499001A1204 /* Storyboards */,
+				17A06E341DCDE44D001A1204 /* View Controllers */,
+				17A06E351DCDE478001A1204 /* Views */,
 				17A06E221DCD3FC6001A1204 /* AppDelegate.swift */,
-				17A06E241DCD3FC6001A1204 /* ViewController.swift */,
-				17A06E261DCD3FC6001A1204 /* Main.storyboard */,
 				17A06E291DCD3FC6001A1204 /* Assets.xcassets */,
-				17A06E2B1DCD3FC6001A1204 /* LaunchScreen.storyboard */,
 				17A06E2E1DCD3FC6001A1204 /* Info.plist */,
 			);
 			path = TreasureHunt;
+			sourceTree = "<group>";
+		};
+		17A06E341DCDE44D001A1204 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				17A06E241DCD3FC6001A1204 /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		17A06E351DCDE478001A1204 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		17A06E361DCDE499001A1204 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				17A06E261DCD3FC6001A1204 /* Main.storyboard */,
+				17A06E2B1DCD3FC6001A1204 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +326,7 @@
 				17A06E331DCD3FC6001A1204 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

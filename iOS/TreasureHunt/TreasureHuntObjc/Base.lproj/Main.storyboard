@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Odx-BV-fcb">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Odx-BV-fcb">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +20,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ethereum Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jh6-wf-7WG">
-                                <rect key="frame" x="59.5" y="318.5" width="256" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="Jrb-mt-Wau"/>
                                 </constraints>
@@ -32,7 +28,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAf-yE-7cz">
-                                <rect key="frame" x="109" y="356.5" width="157" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="48g-23-jEk"/>
                                     <constraint firstAttribute="width" constant="157" id="xqI-LS-Fka"/>
@@ -67,14 +62,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="treasureCell" rowHeight="72" id="97Y-XD-O3c" customClass="TreasureListCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="97Y-XD-O3c" id="EPC-xo-ecH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                    <frame key="frameInset" width="375" height="71.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Treasure Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yd9-W8-pXB">
-                                            <rect key="frame" x="8" y="25" width="359" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="8aZ-q8-usF"/>
                                             </constraints>
@@ -118,7 +112,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This will be the first hint. It could be something like: &quot;Go to the red dot&quot; Let's see how many words I can fit in here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Em-dj-gd2">
-                                <rect key="frame" x="16" y="151" width="343" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="B8R-B2-Qaq"/>
                                     <constraint firstAttribute="width" constant="343" id="hdT-1q-ZNe"/>
@@ -128,24 +121,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-8x-vLd">
-                                <rect key="frame" x="165" y="113" width="45.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-L7-Ka4">
-                                <rect key="frame" x="132.5" y="318.5" width="110" height="30"/>
                                 <state key="normal" title="Try My Location"/>
                                 <connections>
                                     <action selector="tryLocationButton:" destination="w2f-56-p4p" eventType="touchUpInside" id="PJT-rk-Y5X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIL-6W-4XZ">
-                                <rect key="frame" x="157" y="472" width="61" height="30"/>
+                                <frame key="frameInset" minX="157" minY="472" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go to AR"/>
                                 <connections>
-                                    <segue destination="5Zp-Ec-2z1" kind="show" id="Niu-bz-CTN"/>
+                                    <action selector="showAR:" destination="w2f-56-p4p" eventType="touchUpInside" id="bit-wD-oI1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -162,6 +153,7 @@
                     <connections>
                         <outlet property="hintLabel" destination="3Em-dj-gd2" id="1Jf-iU-Bz8"/>
                         <outlet property="tryLocationButton" destination="Nmv-L7-Ka4" id="5OL-PD-0aK"/>
+                        <segue destination="5Zp-Ec-2z1" kind="show" identifier="showAR" id="7Nd-vc-Qxz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AND-30-E3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvo-GH-Web">
-                                <rect key="frame" x="49" y="188" width="240" height="128"/>
+                                <frame key="frameInset" minX="49" minY="188" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

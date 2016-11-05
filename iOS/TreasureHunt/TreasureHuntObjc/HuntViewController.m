@@ -141,6 +141,7 @@
                     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         dispatch_async(dispatch_get_main_queue(), ^(void){
+                            [self performSegueWithIdentifier:@"showAR" sender:self];
                                 //Run UI Updates
                                 self.hintLabel.text = jsonDict[@"hint"];
                                 self.hintLabel.hidden = NO;
@@ -166,6 +167,9 @@
     
 }
 
+- (IBAction)showAR:(id)sender {
+    [self performSegueWithIdentifier:@"showAR" sender:self];
+}
 
 
 

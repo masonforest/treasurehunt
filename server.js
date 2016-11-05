@@ -6,7 +6,7 @@ var _ = require('lodash');
 var SolidityFunction = require('web3/lib/web3/function');
 var web3 = new Web3();
 var app = express()
-web3.setProvider(new web3.providers.HttpProvider('http://localhost:8546'));
+web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
 
 // Live
 const ACCOUNT_ADDRESS = "0x06b50b1fee1a46d8803d017e6bf363a3f904d8fe";
@@ -91,8 +91,12 @@ app.post('/', function (req, res) {
   console.log({
     latitiude: req.body.latitude,
     longitude: req.body.longitude,
+    success: true
   });
-  res.send();
+  res.send(JSON.stringify({
+    hint: "Got to the pizza",
+    success: true
+  }));
 })
 
 function callEtherumFunction(functionName, ...functionArgs) {

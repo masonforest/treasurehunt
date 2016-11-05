@@ -12,6 +12,8 @@
 		17A06E281DCD3FC6001A1204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A06E261DCD3FC6001A1204 /* Main.storyboard */; };
 		17A06E2A1DCD3FC6001A1204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A06E291DCD3FC6001A1204 /* Assets.xcassets */; };
 		17A06E2D1DCD3FC6001A1204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A06E2B1DCD3FC6001A1204 /* LaunchScreen.storyboard */; };
+		F1452CAC1DCDE4F800A40D46 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1452CAB1DCDE4F800A40D46 /* ARViewController.swift */; };
+		F1452CAF1DCDE52400A40D46 /* libVuforia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452CAE1DCDE52400A40D46 /* libVuforia.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		17A06E291DCD3FC6001A1204 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17A06E2C1DCD3FC6001A1204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17A06E2E1DCD3FC6001A1204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1452CAB1DCDE4F800A40D46 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		F1452CAE1DCDE52400A40D46 /* libVuforia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVuforia.a; path = TreasureHunt/Vuforia/build/lib/arm/libVuforia.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1452CAF1DCDE52400A40D46 /* libVuforia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 			children = (
 				17A06E211DCD3FC6001A1204 /* TreasureHunt */,
 				17A06E201DCD3FC6001A1204 /* Products */,
+				F1452CAD1DCDE52400A40D46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +63,7 @@
 				17A06E361DCDE499001A1204 /* Storyboards */,
 				17A06E341DCDE44D001A1204 /* View Controllers */,
 				17A06E351DCDE478001A1204 /* Views */,
+				F1452CAA1DCDE45500A40D46 /* AR */,
 				17A06E221DCD3FC6001A1204 /* AppDelegate.swift */,
 				17A06E291DCD3FC6001A1204 /* Assets.xcassets */,
 				17A06E2E1DCD3FC6001A1204 /* Info.plist */,
@@ -161,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1452CAC1DCDE4F800A40D46 /* ARViewController.swift in Sources */,
 				17A06E251DCD3FC6001A1204 /* ViewController.swift in Sources */,
 				17A06E231DCD3FC6001A1204 /* AppDelegate.swift in Sources */,
 			);
@@ -288,6 +296,10 @@
 				DEVELOPMENT_TEAM = 4QGK58U3J6;
 				INFOPLIST_FILE = TreasureHunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TreasureHunt/Vuforia/build/lib/arm",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marinosoftware.TreasureHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -301,6 +313,10 @@
 				DEVELOPMENT_TEAM = 4QGK58U3J6;
 				INFOPLIST_FILE = TreasureHunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TreasureHunt/Vuforia/build/lib/arm",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marinosoftware.TreasureHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

@@ -23,7 +23,7 @@
 @interface LocationManager : NSObject <CLLocationManagerDelegate>
 
 @property(nonatomic, weak) id <LocationManagerDelegate> delegate;
-+(id) locationManager;
+@property(nonatomic, strong) CLLocationManager *locationManager;
 -(void) requestLocation;
 
 

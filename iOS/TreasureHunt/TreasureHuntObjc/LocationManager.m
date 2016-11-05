@@ -10,10 +10,33 @@
 
 @implementation LocationManager
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.locationManager = [[CLLocationManager alloc] init];
+        [self.locationManager setDelegate:self];
+        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    return self;
+}
 
+-(void) requestLocation {
+    [self.locationManager requestLocation];
+}
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    
+    CLLocation* location = locations.lastObject;
+    if (location != nil) {
+        [_delegate didUpdateLocation:location];
+    } else {
+        [_delegate didFail];
+    }
+}
+
+-(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    [_delegate didFail];
 }
 
 @end

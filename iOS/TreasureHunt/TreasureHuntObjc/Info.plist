@@ -25,6 +25,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need to know you.</string>
 	<key>UILaunchStoryboardName</key>

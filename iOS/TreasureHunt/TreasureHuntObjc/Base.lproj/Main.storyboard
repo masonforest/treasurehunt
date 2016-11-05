@@ -145,7 +145,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go to AR"/>
                                 <connections>
-                                    <action selector="goToAR:" destination="w2f-56-p4p" eventType="touchUpInside" id="0sk-xb-222"/>
+                                    <segue destination="5Zp-Ec-2z1" kind="show" id="Niu-bz-CTN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -167,6 +167,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AND-30-E3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3232.8000000000002" y="-143.47826086956522"/>
+        </scene>
+        <!--Video Playback View Controller-->
+        <scene sceneID="Q3I-1X-4bm">
+            <objects>
+                <viewController id="5Zp-Ec-2z1" customClass="VideoPlaybackViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hsm-he-tx7"/>
+                        <viewControllerLayoutGuide type="bottom" id="4u2-7B-cfh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nd2-Qn-tLa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvo-GH-Web">
+                                <rect key="frame" x="49" y="188" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="ARViewPlaceholder" destination="cvo-GH-Web" id="KnK-4m-bhq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpl-sl-ScC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4020" y="145"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xHG-pi-eDo">

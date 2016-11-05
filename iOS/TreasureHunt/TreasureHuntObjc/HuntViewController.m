@@ -8,6 +8,7 @@
 
 #import "HuntViewController.h"
 #import "LocationManager.h"
+#import "VideoPlaybackViewController.h"
 
 @interface HuntViewController () {
     int numberOfLocationRequests;
@@ -118,8 +119,6 @@
     
 }
 
-- (IBAction)goToAR:(id)sender {
-}
 
 
 

@@ -13,6 +13,7 @@
 @interface HuntViewController () {
     int numberOfLocationRequests;
     NSURLSession* ourSession;
+    UIActivityIndicatorView *activityIndicator;
 }
 
 @end
@@ -21,6 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.center = self.view.center;
+    //activityIndicator.hidden = YES;
+    
+    //[activityIndicator removeFromSuperview];
+    //[activityIndicator startAnimating];
+    //[self.view addSubview:activityIndicator];
     
     self.locationManager = [[LocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -78,6 +87,10 @@
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Fee" message:@"" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"API CALL");
+        //activityIndicator.hidden = NO;
+        [activityIndicator removeFromSuperview];
+        [activityIndicator startAnimating];
+        [self.view addSubview:activityIndicator];
         [self.locationManager requestLocation];
         numberOfLocationRequests = 1;
     }];
@@ -92,7 +105,7 @@
 -(void) didUpdateLocation:(CLLocation *)location {
     if(numberOfLocationRequests > 0) {
         
-        NSMutableURLRequest* someRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://46.101.80.224/"]];
+        NSMutableURLRequest* someRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://treasurehunt.masonforest.com/"]];
         [someRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         [someRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         [someRequest setHTTPMethod:@"POST"];
@@ -105,7 +118,22 @@
             if (response != nil ) {
                 NSLog(@"%@", response);
                 NSLog(@"%@", data);
+                
+                NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                //NSLog(@"%@", jsonDict);
+                
+                NSLog(@"%@", jsonDict[@"found"]);
+                dispatch_async(dispatch_get_main_queue(), ^(void){
+                    //activityIndicator.hidden = YES;
+                    [activityIndicator removeFromSuperview];
+                    //Run UI Updates
+                    self.hintLabel.text = jsonDict[@"hint"];
+                    self.hintLabel.hidden = NO;
+                    self.tryLocationButton.hidden = NO;
+                });
             } else {
+                //activityIndicator.hidden = YES;
+                [activityIndicator removeFromSuperview];
                 NSLog(@"%@", data);
                 NSLog(@"%@", error.localizedDescription);
             }

@@ -15,6 +15,10 @@
 		F1452D8D1DCE15D300A40D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1452D8B1DCE15D300A40D46 /* LaunchScreen.storyboard */; };
 		F1452D971DCE162C00A40D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1452D951DCE162C00A40D46 /* Main.storyboard */; };
 		F1452D981DCE162C00A40D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1452D961DCE162C00A40D46 /* LaunchScreen.storyboard */; };
+		F1452D9D1DCE1C5800A40D46 /* HuntViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1452D9C1DCE1C5800A40D46 /* HuntViewController.m */; };
+		F1452DA01DCE1C7900A40D46 /* TreasureListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1452D9F1DCE1C7900A40D46 /* TreasureListTableViewController.m */; };
+		F1452DA31DCE1CBA00A40D46 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1452DA21DCE1CBA00A40D46 /* LocationManager.m */; };
+		F1452DA71DCE1D2B00A40D46 /* TreasureListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1452DA61DCE1D2B00A40D46 /* TreasureListCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,14 @@
 		F1452D8E1DCE15D300A40D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1452D951DCE162C00A40D46 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F1452D961DCE162C00A40D46 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1452D9B1DCE1C5800A40D46 /* HuntViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuntViewController.h; sourceTree = "<group>"; };
+		F1452D9C1DCE1C5800A40D46 /* HuntViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuntViewController.m; sourceTree = "<group>"; };
+		F1452D9E1DCE1C7900A40D46 /* TreasureListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreasureListTableViewController.h; sourceTree = "<group>"; };
+		F1452D9F1DCE1C7900A40D46 /* TreasureListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreasureListTableViewController.m; sourceTree = "<group>"; };
+		F1452DA11DCE1CBA00A40D46 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		F1452DA21DCE1CBA00A40D46 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		F1452DA51DCE1D2B00A40D46 /* TreasureListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreasureListCell.h; sourceTree = "<group>"; };
+		F1452DA61DCE1D2B00A40D46 /* TreasureListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreasureListCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +74,12 @@
 		F1452D7C1DCE15D300A40D46 /* TreasureHuntObjc */ = {
 			isa = PBXGroup;
 			children = (
+				F1452DA41DCE1D0C00A40D46 /* Views */,
+				F1452D9A1DCE1C3300A40D46 /* ViewControllers */,
+				F1452D991DCE1C2B00A40D46 /* Models */,
 				F1452D941DCE161F00A40D46 /* Storyboards */,
 				F1452D801DCE15D300A40D46 /* AppDelegate.h */,
 				F1452D811DCE15D300A40D46 /* AppDelegate.m */,
-				F1452D831DCE15D300A40D46 /* ViewController.h */,
-				F1452D841DCE15D300A40D46 /* ViewController.m */,
 				F1452D861DCE15D300A40D46 /* Main.storyboard */,
 				F1452D891DCE15D300A40D46 /* Assets.xcassets */,
 				F1452D8B1DCE15D300A40D46 /* LaunchScreen.storyboard */,
@@ -91,6 +104,37 @@
 				F1452D961DCE162C00A40D46 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		F1452D991DCE1C2B00A40D46 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1452DA11DCE1CBA00A40D46 /* LocationManager.h */,
+				F1452DA21DCE1CBA00A40D46 /* LocationManager.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F1452D9A1DCE1C3300A40D46 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1452D831DCE15D300A40D46 /* ViewController.h */,
+				F1452D841DCE15D300A40D46 /* ViewController.m */,
+				F1452D9B1DCE1C5800A40D46 /* HuntViewController.h */,
+				F1452D9C1DCE1C5800A40D46 /* HuntViewController.m */,
+				F1452D9E1DCE1C7900A40D46 /* TreasureListTableViewController.h */,
+				F1452D9F1DCE1C7900A40D46 /* TreasureListTableViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F1452DA41DCE1D0C00A40D46 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1452DA51DCE1D2B00A40D46 /* TreasureListCell.h */,
+				F1452DA61DCE1D2B00A40D46 /* TreasureListCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +210,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1452DA71DCE1D2B00A40D46 /* TreasureListCell.m in Sources */,
+				F1452DA31DCE1CBA00A40D46 /* LocationManager.m in Sources */,
 				F1452D851DCE15D300A40D46 /* ViewController.m in Sources */,
+				F1452D9D1DCE1C5800A40D46 /* HuntViewController.m in Sources */,
 				F1452D821DCE15D300A40D46 /* AppDelegate.m in Sources */,
+				F1452DA01DCE1C7900A40D46 /* TreasureListTableViewController.m in Sources */,
 				F1452D7F1DCE15D300A40D46 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

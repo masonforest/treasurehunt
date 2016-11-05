@@ -3,17 +3,43 @@ var bodyParser = require('body-parser')
 var Web3 = require('web3');
 var web3 = new Web3();
 var app = express()
-web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
+web3.setProvider(new web3.providers.HttpProvider('http://localhost:4000'));
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
 web3.eth.defaultAccount = web3.eth.accounts[0];
-treasureHuntAbi = [{"constant":false,"inputs":[{"name":"latitude","type":"int256"},{"name":"longitude","type":"int256"}],"name":"IsTreasureHere","outputs":[],"type":"function"},{"inputs":[],"type":"constructor"}];
+treasureHuntAbi = [
+{
+	"constant": false,
+	"inputs": [{
+		"name": "latitude",
+		"type": "int256"
+	},
+	{
+		"name": "longitude",
+		"type": "int256"
+	}],
+	"name": "IsTreasureHere",
+	"outputs": [],
+	"type": "function"
+},
+{
+	"inputs": [],
+	"type": "constructor"
+}];
 var TreasureHunt = web3.eth.contract(treasureHuntAbi);
 
 treasureHunt = TreasureHunt.at("0xc0ea08a2d404d3172d2add29a45be56da40e2949");
+
+app.get('/nextHint', function (req, res) {
+  console.log(treasureHunt)
+  console.log({
+	userId: req.query.userId
+  });
+  res.send();
+})
 
 app.post('/', function (req, res) {
   console.log(treasureHunt)

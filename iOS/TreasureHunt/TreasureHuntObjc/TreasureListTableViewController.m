@@ -7,8 +7,11 @@
 //
 
 #import "TreasureListTableViewController.h"
+#import "TreasureListCell.h"
 
-@interface TreasureListTableViewController ()
+@interface TreasureListTableViewController () {
+    NSMutableArray *treasureTitles;
+}
 
 @end
 
@@ -22,6 +25,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    treasureTitles = [@[@"Hackahunt"] mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,24 +37,22 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [treasureTitles count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    TreasureListCell *cell = (TreasureListCell *)[tableView dequeueReusableCellWithIdentifier:@"treasureCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.treasureTitleLabel.text = treasureTitles[indexPath.row];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

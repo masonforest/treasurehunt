@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TreasureListCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *treasureTitleLabel;
 
 @end

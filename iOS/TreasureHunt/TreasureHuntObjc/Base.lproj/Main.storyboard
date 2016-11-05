@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TreasureHunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TreasureHuntObjc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -55,17 +55,17 @@
         <!--Treasure List View Controller-->
         <scene sceneID="b2o-7U-hyR">
             <objects>
-                <tableViewController id="Zgx-iW-G1b" customClass="TreasureListViewController" customModule="TreasureHunt" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Zgx-iW-G1b" customClass="TreasureListViewController" customModule="TreasureHuntObjc" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="6yc-St-EuF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="treasureCell" rowHeight="72" id="97Y-XD-O3c" customClass="TreasureListCell" customModule="TreasureHunt" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="treasureCell" rowHeight="72" id="97Y-XD-O3c" customClass="TreasureListCell" customModule="TreasureHuntObjc" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="97Y-XD-O3c" id="EPC-xo-ecH">
-                                    <frame key="frameInset" width="375" height="71"/>
+                                    <frame key="frameInset" width="375" height="71.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Treasure Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yd9-W8-pXB">
@@ -84,7 +84,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="treasureTitleLabel" destination="Yd9-W8-pXB" id="ReS-pM-LAH"/>
+                                    <outlet property="treasureTitleLabel" destination="Yd9-W8-pXB" id="Tz5-Ib-psj"/>
                                     <segue destination="w2f-56-p4p" kind="show" id="w6p-Jc-4ll"/>
                                 </connections>
                             </tableViewCell>
@@ -102,7 +102,7 @@
         <!--Hunt View Controller-->
         <scene sceneID="vGm-x3-4SM">
             <objects>
-                <viewController id="w2f-56-p4p" customClass="HuntViewController" customModule="TreasureHunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w2f-56-p4p" customClass="HuntViewController" customModule="TreasureHuntObjc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ij1-gd-rPy"/>
                         <viewControllerLayoutGuide type="bottom" id="Wrm-AO-g3h"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1766663F1DCE000F0044A584 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766663E1DCE000F0044A584 /* LocationManager.swift */; };
 		17A06E231DCD3FC6001A1204 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A06E221DCD3FC6001A1204 /* AppDelegate.swift */; };
 		17A06E251DCD3FC6001A1204 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A06E241DCD3FC6001A1204 /* ViewController.swift */; };
 		17A06E281DCD3FC6001A1204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A06E261DCD3FC6001A1204 /* Main.storyboard */; };
@@ -15,9 +16,13 @@
 		F1452CAC1DCDE4F800A40D46 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1452CAB1DCDE4F800A40D46 /* ARViewController.swift */; };
 		F1452CAF1DCDE52400A40D46 /* libVuforia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452CAE1DCDE52400A40D46 /* libVuforia.a */; };
 		F1452CB21DCDE71F00A40D46 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1452CB11DCDE71F00A40D46 /* ARViewController.swift */; };
+		17A06E381DCDE504001A1204 /* TreasureListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A06E371DCDE504001A1204 /* TreasureListViewController.swift */; };
+		17A06E3A1DCDE550001A1204 /* TreasureListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A06E391DCDE550001A1204 /* TreasureListCell.swift */; };
+		17A06E3C1DCDEA1A001A1204 /* HuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A06E3B1DCDEA1A001A1204 /* HuntViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1766663E1DCE000F0044A584 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		17A06E1F1DCD3FC6001A1204 /* TreasureHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A06E221DCD3FC6001A1204 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17A06E241DCD3FC6001A1204 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +33,9 @@
 		F1452CAB1DCDE4F800A40D46 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		F1452CAE1DCDE52400A40D46 /* libVuforia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVuforia.a; path = TreasureHunt/Vuforia/build/lib/arm/libVuforia.a; sourceTree = "<group>"; };
 		F1452CB11DCDE71F00A40D46 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		17A06E371DCDE504001A1204 /* TreasureListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureListViewController.swift; sourceTree = "<group>"; };
+		17A06E391DCDE550001A1204 /* TreasureListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureListCell.swift; sourceTree = "<group>"; };
+		17A06E3B1DCDEA1A001A1204 /* HuntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1766663D1DCDFFF70044A584 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1766663E1DCE000F0044A584 /* LocationManager.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		17A06E161DCD3FC6001A1204 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +79,7 @@
 			children = (
 				F1452CB01DCDE70C00A40D46 /* AR */,
 				17A06E361DCDE499001A1204 /* Storyboards */,
+				1766663D1DCDFFF70044A584 /* Models */,
 				17A06E341DCDE44D001A1204 /* View Controllers */,
 				17A06E351DCDE478001A1204 /* Views */,
 				17A06E221DCD3FC6001A1204 /* AppDelegate.swift */,
@@ -76,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				17A06E241DCD3FC6001A1204 /* ViewController.swift */,
+				17A06E371DCDE504001A1204 /* TreasureListViewController.swift */,
+				17A06E3B1DCDEA1A001A1204 /* HuntViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -83,6 +102,7 @@
 		17A06E351DCDE478001A1204 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				17A06E391DCDE550001A1204 /* TreasureListCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -181,6 +201,12 @@
 				17A06E251DCD3FC6001A1204 /* ViewController.swift in Sources */,
 				17A06E231DCD3FC6001A1204 /* AppDelegate.swift in Sources */,
 				F1452CB21DCDE71F00A40D46 /* ARViewController.swift in Sources */,
+				17A06E3A1DCDE550001A1204 /* TreasureListCell.swift in Sources */,
+				17A06E3C1DCDEA1A001A1204 /* HuntViewController.swift in Sources */,
+				1766663F1DCE000F0044A584 /* LocationManager.swift in Sources */,
+				17A06E251DCD3FC6001A1204 /* ViewController.swift in Sources */,
+				17A06E231DCD3FC6001A1204 /* AppDelegate.swift in Sources */,
+				17A06E381DCDE504001A1204 /* TreasureListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

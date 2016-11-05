@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ethereum Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jh6-wf-7WG">
@@ -32,16 +32,29 @@
                                     <constraint firstAttribute="height" constant="30" id="48g-23-jEk"/>
                                     <constraint firstAttribute="width" constant="157" id="xqI-LS-Fka"/>
                                 </constraints>
-                                <state key="normal" title="Find a Treasure Hunt"/>
+                                <state key="normal" title="Find a Treasure Hunt">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="Zgx-iW-G1b" kind="show" id="RxD-Jc-kNE"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orangeorion" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ3-ck-RyD"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your Ethereum Address to receive possible prices at. And to pay fees from." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC4-PO-Y0o">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZZ3-ck-RyD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="1H5-Av-sA7"/>
+                            <constraint firstItem="hC4-PO-Y0o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5h2-V3-9Al"/>
                             <constraint firstItem="jh6-wf-7WG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DU1-99-1cx"/>
+                            <constraint firstItem="hC4-PO-Y0o" firstAttribute="top" secondItem="ZZ3-ck-RyD" secondAttribute="bottom" constant="120" id="Dwa-GV-wLx"/>
                             <constraint firstItem="YAf-yE-7cz" firstAttribute="top" secondItem="jh6-wf-7WG" secondAttribute="bottom" constant="8" id="RYp-BY-Xdi"/>
+                            <constraint firstItem="ZZ3-ck-RyD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sl7-46-o7M"/>
+                            <constraint firstItem="hC4-PO-Y0o" firstAttribute="width" secondItem="jh6-wf-7WG" secondAttribute="width" id="hbb-fk-bBn"/>
                             <constraint firstItem="jh6-wf-7WG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pub-Yp-Fes"/>
                             <constraint firstItem="YAf-yE-7cz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uPW-d5-pGi"/>
                         </constraints>
@@ -50,22 +63,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="-142"/>
+            <point key="canvasLocation" x="1080.8" y="-142.57871064467767"/>
         </scene>
         <!--Treasure List Table View Controller-->
         <scene sceneID="b2o-7U-hyR">
             <objects>
                 <tableViewController id="Zgx-iW-G1b" customClass="TreasureListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="6yc-St-EuF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="treasureCell" rowHeight="72" id="97Y-XD-O3c" customClass="TreasureListCell">
-                                <rect key="frame" x="0.0" y="92" width="375" height="72"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="97Y-XD-O3c" id="EPC-xo-ecH">
-                                    <frame key="frameInset" width="375" height="71.5"/>
+                                    <frame key="frameInset" width="375" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Treasure Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yd9-W8-pXB">
@@ -73,16 +88,18 @@
                                                 <constraint firstAttribute="height" constant="21" id="8aZ-q8-usF"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="leadingMargin" secondItem="Yd9-W8-pXB" secondAttribute="leading" id="5TP-Jl-gHc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Yd9-W8-pXB" secondAttribute="trailing" id="jXX-Mz-8W1"/>
                                         <constraint firstItem="Yd9-W8-pXB" firstAttribute="top" secondItem="EPC-xo-ecH" secondAttribute="topMargin" constant="17" id="vZ0-VN-QKS"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="treasureTitleLabel" destination="Yd9-W8-pXB" id="hky-85-qLE"/>
                                     <segue destination="w2f-56-p4p" kind="show" id="w6p-Jc-4ll"/>
@@ -94,6 +111,9 @@
                             <outlet property="delegate" destination="Zgx-iW-G1b" id="H1E-E6-76i"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="table" destination="6yc-St-EuF" id="jbE-Kc-mdd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I46-S2-Bng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,7 +128,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wrm-AO-g3h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jup-o3-uBf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This will be the first hint. It could be something like: &quot;Go to the red dot&quot; Let's see how many words I can fit in here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Em-dj-gd2">
@@ -117,28 +137,32 @@
                                     <constraint firstAttribute="width" constant="343" id="hdT-1q-ZNe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-8x-vLd">
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-L7-Ka4">
-                                <state key="normal" title="Try My Location"/>
+                                <state key="normal" title="Try My Location">
+                                    <color key="titleColor" red="0.96862745098039216" green="0.57647058823529407" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="tryLocationButton:" destination="w2f-56-p4p" eventType="touchUpInside" id="PJT-rk-Y5X"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-VH-xYP">
-                                <state key="normal" title="Play Last Hint"/>
+                                <state key="normal" title="Play Last Hint">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="playHint:" destination="w2f-56-p4p" eventType="touchUpInside" id="9le-ez-Jyz"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nmv-L7-Ka4" firstAttribute="centerX" secondItem="jup-o3-uBf" secondAttribute="centerX" id="0ml-4g-WyL"/>
                             <constraint firstItem="EFK-VH-xYP" firstAttribute="top" secondItem="uTx-8x-vLd" secondAttribute="bottom" constant="8" id="EFh-X5-UEv"/>
@@ -170,7 +194,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4u2-7B-cfh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nd2-Qn-tLa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvo-GH-Web">
@@ -192,9 +216,10 @@
         <scene sceneID="xHG-pi-eDo">
             <objects>
                 <navigationController id="Odx-BV-fcb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zk3-6A-Xa3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="zk3-6A-Xa3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="x0v-0x-wZL"/>
@@ -205,4 +230,7 @@
             <point key="canvasLocation" x="209" y="-141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="orangeorion" width="300" height="82"/>
+    </resources>
 </document>

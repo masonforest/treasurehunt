@@ -12,6 +12,7 @@
 @interface TreasureListTableViewController () {
     NSMutableArray *treasureTitles;
 }
+@property (strong, nonatomic) IBOutlet UITableView *table;
 
 @end
 
@@ -26,7 +27,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    treasureTitles = [@[@"Hackahunt"] mutableCopy];
+    treasureTitles = [@[@"The Dublin Theft"] mutableCopy];
+    self.table.backgroundColor = [UIColor blackColor];
+    self.table.backgroundView.backgroundColor = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning {

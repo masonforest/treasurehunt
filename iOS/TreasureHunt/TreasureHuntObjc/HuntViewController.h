@@ -15,6 +15,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel* hintLabel;
 @property (weak, nonatomic) IBOutlet UIButton *tryLocationButton;
+@property (weak, nonatomic) IBOutlet UIButton *playHintButton;
 
 
 

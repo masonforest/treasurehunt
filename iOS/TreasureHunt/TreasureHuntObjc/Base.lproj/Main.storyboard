@@ -131,8 +131,8 @@
                                     <action selector="tryLocationButton:" destination="w2f-56-p4p" eventType="touchUpInside" id="PJT-rk-Y5X"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-VH-xYP">
-                                <state key="normal" title="Play Hint"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-VH-xYP">
+                                <state key="normal" title="Play Last Hint"/>
                                 <connections>
                                     <action selector="playHint:" destination="w2f-56-p4p" eventType="touchUpInside" id="9le-ez-Jyz"/>
                                 </connections>
@@ -152,6 +152,7 @@
                     </view>
                     <connections>
                         <outlet property="hintLabel" destination="3Em-dj-gd2" id="1Jf-iU-Bz8"/>
+                        <outlet property="playHintButton" destination="EFK-VH-xYP" id="f5I-re-UNi"/>
                         <outlet property="tryLocationButton" destination="Nmv-L7-Ka4" id="5OL-PD-0aK"/>
                         <segue destination="5Zp-Ec-2z1" kind="show" identifier="showAR" id="7Nd-vc-Qxz"/>
                     </connections>

@@ -163,6 +163,7 @@ countries.
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     // This is called when the full time player is being displayed
     // so we check the boolean to avoid shutting down AR
     if (!fullScreenPlayerPlaying && !self.showingMenu) {

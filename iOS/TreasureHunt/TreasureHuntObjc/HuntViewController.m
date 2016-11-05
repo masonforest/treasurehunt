@@ -28,9 +28,9 @@
     activityIndicator.center = self.view.center;
     //activityIndicator.hidden = YES;
     
-    //[activityIndicator removeFromSuperview];
-    //[activityIndicator startAnimating];
-    //[self.view addSubview:activityIndicator];
+    [activityIndicator removeFromSuperview];
+    [activityIndicator startAnimating];
+    [self.view addSubview:activityIndicator];
     
     self.locationManager = [[LocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -53,11 +53,12 @@
             //NSLog(@"%@", jsonDict);
             
             dispatch_async(dispatch_get_main_queue(), ^(void){
-                
+                [activityIndicator removeFromSuperview];
                 //Run UI Updates
                 self.hintLabel.text = jsonDict[@"hint"];
-                lastHintVideo = jsonDict[@"hint"]; //TODO: change to video
+                lastHintVideo = jsonDict[@"video"];
                 self.hintLabel.hidden = NO;
+                self.playHintButton.hidden = NO;
                 self.tryLocationButton.hidden = NO;
             });
         } else {
@@ -149,8 +150,9 @@
                             [self performSegueWithIdentifier:@"showAR" sender:self];
                             //Run UI Updates
                             self.hintLabel.text = jsonDict[@"hint"];
-                            lastHintVideo = jsonDict[@"hint"];//TODO: change to video
+                            lastHintVideo = jsonDict[@"video"];
                             self.hintLabel.hidden = NO;
+                            self.playHintButton.hidden = NO;
                             self.tryLocationButton.hidden = NO;
                         });
                     }];

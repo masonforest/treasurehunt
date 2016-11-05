@@ -14,6 +14,7 @@
     int numberOfLocationRequests;
     NSURLSession* ourSession;
     UIActivityIndicatorView *activityIndicator;
+    NSString *lastHintVideo;
 }
 
 @end
@@ -22,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    lastHintVideo = @"";
     activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activityIndicator.center = self.view.center;
     //activityIndicator.hidden = YES;
@@ -55,6 +56,7 @@
                 
                 //Run UI Updates
                 self.hintLabel.text = jsonDict[@"hint"];
+                lastHintVideo = jsonDict[@"hint"]; //TODO: change to video
                 self.hintLabel.hidden = NO;
                 self.tryLocationButton.hidden = NO;
             });
@@ -82,6 +84,9 @@
 
  
  */
+- (IBAction)playHint:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"showAR" sender:self];
+}
 
 -(IBAction)tryLocationButton:(id)sender {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Fee" message:@"" preferredStyle:UIAlertControllerStyleAlert];
@@ -142,11 +147,12 @@
                     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         dispatch_async(dispatch_get_main_queue(), ^(void){
                             [self performSegueWithIdentifier:@"showAR" sender:self];
-                                //Run UI Updates
-                                self.hintLabel.text = jsonDict[@"hint"];
-                                self.hintLabel.hidden = NO;
-                                self.tryLocationButton.hidden = NO;
-                            });
+                            //Run UI Updates
+                            self.hintLabel.text = jsonDict[@"hint"];
+                            lastHintVideo = jsonDict[@"hint"];//TODO: change to video
+                            self.hintLabel.hidden = NO;
+                            self.tryLocationButton.hidden = NO;
+                        });
                     }];
                     [alert addAction:defaultAction];
                     [self presentViewController:alert animated:YES completion:nil];
@@ -166,11 +172,6 @@
 -(void) didFail {
     
 }
-
-- (IBAction)showAR:(id)sender {
-    [self performSegueWithIdentifier:@"showAR" sender:self];
-}
-
 
 
 @end

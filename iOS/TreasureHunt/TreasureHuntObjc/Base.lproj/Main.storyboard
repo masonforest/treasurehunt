@@ -131,23 +131,23 @@
                                     <action selector="tryLocationButton:" destination="w2f-56-p4p" eventType="touchUpInside" id="PJT-rk-Y5X"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIL-6W-4XZ">
-                                <frame key="frameInset" minX="157" minY="472" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go to AR"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-VH-xYP">
+                                <state key="normal" title="Play Hint"/>
                                 <connections>
-                                    <action selector="showAR:" destination="w2f-56-p4p" eventType="touchUpInside" id="bit-wD-oI1"/>
+                                    <action selector="playHint:" destination="w2f-56-p4p" eventType="touchUpInside" id="9le-ez-Jyz"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nmv-L7-Ka4" firstAttribute="centerX" secondItem="jup-o3-uBf" secondAttribute="centerX" id="0ml-4g-WyL"/>
-                            <constraint firstItem="3Em-dj-gd2" firstAttribute="top" secondItem="uTx-8x-vLd" secondAttribute="bottom" constant="8" id="5rs-C3-JlX"/>
+                            <constraint firstItem="EFK-VH-xYP" firstAttribute="top" secondItem="uTx-8x-vLd" secondAttribute="bottom" constant="8" id="EFh-X5-UEv"/>
                             <constraint firstItem="uTx-8x-vLd" firstAttribute="top" secondItem="Ij1-gd-rPy" secondAttribute="bottom" constant="49" id="FFV-8d-C0Y"/>
+                            <constraint firstItem="3Em-dj-gd2" firstAttribute="top" secondItem="EFK-VH-xYP" secondAttribute="bottom" constant="10" id="Hnl-TX-NeZ"/>
                             <constraint firstItem="Nmv-L7-Ka4" firstAttribute="centerY" secondItem="jup-o3-uBf" secondAttribute="centerY" id="Qfz-Yv-NTj"/>
                             <constraint firstItem="uTx-8x-vLd" firstAttribute="centerX" secondItem="jup-o3-uBf" secondAttribute="centerX" id="Ujg-WN-OJ4"/>
                             <constraint firstItem="3Em-dj-gd2" firstAttribute="centerX" secondItem="jup-o3-uBf" secondAttribute="centerX" id="ZTR-VK-NcV"/>
+                            <constraint firstItem="EFK-VH-xYP" firstAttribute="centerX" secondItem="jup-o3-uBf" secondAttribute="centerX" id="n1t-BX-ZgO"/>
                         </constraints>
                     </view>
                     <connections>

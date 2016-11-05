@@ -1142,6 +1142,7 @@ static NSString* const kRateKey = @"rate";
     if (NULL == currentSampleBuffer) {
         switch ([assetReader status]) {
             case AVAssetReaderStatusCompleted:
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"endAR" object:nil];
                 // Playback has reached the end of the video media
                 DEBUGLOG(@"getNextVideoFrame -> AVAssetReaderStatusCompleted");
                 mediaState = REACHED_END;

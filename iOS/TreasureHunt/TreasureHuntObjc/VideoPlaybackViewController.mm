@@ -95,6 +95,8 @@ countries.
                                                  name:@"kDismissARViewController"
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endAR) name:@"endAR" object:nil];
+    
     // we use the iOS notification to pause/resume the AR when the application goes (or come back from) background
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -113,6 +115,10 @@ countries.
 
     // show loading animation while AR is being initialized
     [self showLoadingAnimation];
+}
+
+- (void)endAR {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void) pauseAR {

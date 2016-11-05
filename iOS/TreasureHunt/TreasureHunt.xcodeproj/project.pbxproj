@@ -14,6 +14,7 @@
 		17A06E2D1DCD3FC6001A1204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A06E2B1DCD3FC6001A1204 /* LaunchScreen.storyboard */; };
 		F1452CAC1DCDE4F800A40D46 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1452CAB1DCDE4F800A40D46 /* ARViewController.swift */; };
 		F1452CAF1DCDE52400A40D46 /* libVuforia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452CAE1DCDE52400A40D46 /* libVuforia.a */; };
+		F1452CB21DCDE71F00A40D46 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1452CB11DCDE71F00A40D46 /* ARViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		17A06E2E1DCD3FC6001A1204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1452CAB1DCDE4F800A40D46 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		F1452CAE1DCDE52400A40D46 /* libVuforia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVuforia.a; path = TreasureHunt/Vuforia/build/lib/arm/libVuforia.a; sourceTree = "<group>"; };
+		F1452CB11DCDE71F00A40D46 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +47,6 @@
 			children = (
 				17A06E211DCD3FC6001A1204 /* TreasureHunt */,
 				17A06E201DCD3FC6001A1204 /* Products */,
-				F1452CAD1DCDE52400A40D46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,10 +61,10 @@
 		17A06E211DCD3FC6001A1204 /* TreasureHunt */ = {
 			isa = PBXGroup;
 			children = (
+				F1452CB01DCDE70C00A40D46 /* AR */,
 				17A06E361DCDE499001A1204 /* Storyboards */,
 				17A06E341DCDE44D001A1204 /* View Controllers */,
 				17A06E351DCDE478001A1204 /* Views */,
-				F1452CAA1DCDE45500A40D46 /* AR */,
 				17A06E221DCD3FC6001A1204 /* AppDelegate.swift */,
 				17A06E291DCD3FC6001A1204 /* Assets.xcassets */,
 				17A06E2E1DCD3FC6001A1204 /* Info.plist */,
@@ -93,6 +94,14 @@
 				17A06E2B1DCD3FC6001A1204 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		F1452CB01DCDE70C00A40D46 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				F1452CB11DCDE71F00A40D46 /* ARViewController.swift */,
+			);
+			name = AR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +180,7 @@
 				F1452CAC1DCDE4F800A40D46 /* ARViewController.swift in Sources */,
 				17A06E251DCD3FC6001A1204 /* ViewController.swift in Sources */,
 				17A06E231DCD3FC6001A1204 /* AppDelegate.swift in Sources */,
+				F1452CB21DCDE71F00A40D46 /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

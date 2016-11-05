@@ -1,0 +1,34 @@
+{
+  "name": "treasurehunt",
+  "version": "1.0.0",
+  "description": "A hackathon project to implement a blockchain-based game",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "web3": "^0.17.0-beta"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masonforest/treasurehunt.git"
+  },
+  "keywords": [
+    "etheureum",
+    "blockchain",
+    "hackathon",
+    "multi-user",
+    "distributed",
+    "game"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masonforest/treasurehunt/issues"
+  },
+  "homepage": "https://github.com/masonforest/treasurehunt#readme"
+}

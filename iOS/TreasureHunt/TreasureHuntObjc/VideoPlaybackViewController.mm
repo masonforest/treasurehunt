@@ -418,14 +418,16 @@ countries.
 - (void)doubleTapGestureAction:(UITapGestureRecognizer*)theGesture
 {
     if (!self.showingMenu) {
-        [self performSegueWithIdentifier: @"PresentMenu" sender: self];
+        //[self performSegueWithIdentifier: @"PresentMenu" sender: self];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
 - (void)swipeGestureAction:(UISwipeGestureRecognizer*)gesture
 {
     if (!self.showingMenu) {
-        [self performSegueWithIdentifier:@"PresentMenu" sender:self];
+     //   [self performSegueWithIdentifier:@"PresentMenu" sender:self];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

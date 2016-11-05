@@ -50,6 +50,12 @@ app.get('/nextHint', function (req, res) {
   res.send();
 })
 
+app.get('/balance', function (req, res) {
+  web3.eth.getBalance(ACCOUNT_ADDRESS, (err, result) => {
+    res.send(result);
+  })
+})
+
 app.post('/', function (req, res) {
   web3.personal.unlockAccount(ACCOUNT_ADDRESS, PASSWORD, 1000);
   treasureHunt.IsTreasureHere(

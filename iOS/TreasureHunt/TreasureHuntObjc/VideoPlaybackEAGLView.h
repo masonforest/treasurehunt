@@ -19,7 +19,7 @@ Copyright (c) 2016 PTC Inc. All Rights Reserved.
 
 
 static const int kNumAugmentationTextures = 5;
-static const int kNumVideoTargets = 2;
+static const int kNumVideoTargets = 5;
 
 // VideoPlayback is a subclass of UIView and conforms to the informal protocol
 // UIGLViewProtocol

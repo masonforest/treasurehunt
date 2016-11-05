@@ -52,6 +52,8 @@
 		F1452E541DCE492100A40D46 /* Line.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = F1452E501DCE492100A40D46 /* Line.vertsh */; };
 		F1452E551DCE492100A40D46 /* Simple.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = F1452E511DCE492100A40D46 /* Simple.fragsh */; };
 		F1452E561DCE492100A40D46 /* Simple.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = F1452E521DCE492100A40D46 /* Simple.vertsh */; };
+		F1452E651DCE714400A40D46 /* BlockchainHack1.dat in Resources */ = {isa = PBXBuildFile; fileRef = F1452E631DCE714400A40D46 /* BlockchainHack1.dat */; };
+		F1452E661DCE714400A40D46 /* BlockchainHack1.xml in Resources */ = {isa = PBXBuildFile; fileRef = F1452E641DCE714400A40D46 /* BlockchainHack1.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -208,6 +210,8 @@
 		F1452E501DCE492100A40D46 /* Line.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Line.vertsh; sourceTree = "<group>"; };
 		F1452E511DCE492100A40D46 /* Simple.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Simple.fragsh; sourceTree = "<group>"; };
 		F1452E521DCE492100A40D46 /* Simple.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Simple.vertsh; sourceTree = "<group>"; };
+		F1452E631DCE714400A40D46 /* BlockchainHack1.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlockchainHack1.dat; sourceTree = "<group>"; };
+		F1452E641DCE714400A40D46 /* BlockchainHack1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BlockchainHack1.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +487,8 @@
 				F1452E3F1DCE432B00A40D46 /* icon_play.png */,
 				F1452E391DCE42DB00A40D46 /* StonesAndChips.dat */,
 				F1452E3A1DCE42DB00A40D46 /* StonesAndChips.xml */,
+				F1452E631DCE714400A40D46 /* BlockchainHack1.dat */,
+				F1452E641DCE714400A40D46 /* BlockchainHack1.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -557,10 +563,12 @@
 				F1452D881DCE15D300A40D46 /* Main.storyboard in Resources */,
 				F1452D981DCE162C00A40D46 /* LaunchScreen.storyboard in Resources */,
 				F1452E421DCE432B00A40D46 /* icon_play.png in Resources */,
+				F1452E661DCE714400A40D46 /* BlockchainHack1.xml in Resources */,
 				F1452E4E1DCE485100A40D46 /* Background.vertsh in Resources */,
 				F1452E471DCE435C00A40D46 /* VuforiaSizzleReel_1.mp4 in Resources */,
 				F1452E541DCE492100A40D46 /* Line.vertsh in Resources */,
 				F1452E531DCE492100A40D46 /* Line.fragsh in Resources */,
+				F1452E651DCE714400A40D46 /* BlockchainHack1.dat in Resources */,
 				F1452E551DCE492100A40D46 /* Simple.fragsh in Resources */,
 				F1452E3B1DCE42DB00A40D46 /* StonesAndChips.dat in Resources */,
 			);

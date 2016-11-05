@@ -264,7 +264,7 @@ countries.
 
 // load the data associated to the trackers
 - (bool) doLoadTrackersData {
-    return [self loadAndActivateImageTrackerDataSet:@"StonesAndChips.xml"];;
+    return [self loadAndActivateImageTrackerDataSet:@"BlockchainHack1.xml"];;
 }
 
 // start the application trackers
@@ -417,18 +417,12 @@ countries.
 
 - (void)doubleTapGestureAction:(UITapGestureRecognizer*)theGesture
 {
-    if (!self.showingMenu) {
-        //[self performSegueWithIdentifier: @"PresentMenu" sender: self];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)swipeGestureAction:(UISwipeGestureRecognizer*)gesture
 {
-    if (!self.showingMenu) {
-     //   [self performSegueWithIdentifier:@"PresentMenu" sender:self];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

@@ -19,6 +19,24 @@
 		F1452DA71DCE1D2B00A40D46 /* TreasureListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1452DA61DCE1D2B00A40D46 /* TreasureListCell.m */; };
 		F1452DAB1DCE2A9700A40D46 /* ARViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F1452DAA1DCE2A9700A40D46 /* ARViewController.mm */; };
 		F1452DAD1DCE2AC100A40D46 /* libVuforia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452DAC1DCE2AC100A40D46 /* libVuforia.a */; };
+		F1452E0C1DCE362E00A40D46 /* SampleMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1452E081DCE362E00A40D46 /* SampleMath.cpp */; };
+		F1452E0D1DCE362E00A40D46 /* VideoPlaybackEAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = F1452E0B1DCE362E00A40D46 /* VideoPlaybackEAGLView.mm */; };
+		F1452E101DCE364800A40D46 /* Texture.mm in Sources */ = {isa = PBXBuildFile; fileRef = F1452E0F1DCE364800A40D46 /* Texture.mm */; };
+		F1452E131DCE36AE00A40D46 /* SampleApplicationSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = F1452E121DCE36AE00A40D46 /* SampleApplicationSession.mm */; };
+		F1452E161DCE36BF00A40D46 /* VideoPlayerHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = F1452E151DCE36BF00A40D46 /* VideoPlayerHelper.mm */; };
+		F1452E1A1DCE371D00A40D46 /* VideoPlaybackViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F1452E191DCE371D00A40D46 /* VideoPlaybackViewController.mm */; };
+		F1452E1D1DCE377300A40D46 /* SampleAppRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F1452E1C1DCE377300A40D46 /* SampleAppRenderer.mm */; };
+		F1452E201DCE378600A40D46 /* SampleApplicationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1452E1E1DCE378600A40D46 /* SampleApplicationUtils.cpp */; };
+		F1452E231DCE37EE00A40D46 /* SampleApplicationShaderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1452E221DCE37EE00A40D46 /* SampleApplicationShaderUtils.m */; };
+		F1452E271DCE3AC100A40D46 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452E261DCE3AC100A40D46 /* CoreMotion.framework */; };
+		F1452E291DCE3ACF00A40D46 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452E281DCE3ACF00A40D46 /* AVFoundation.framework */; };
+		F1452E2B1DCE3B0400A40D46 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452E2A1DCE3B0400A40D46 /* CoreMedia.framework */; };
+		F1452E2D1DCE3B6E00A40D46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452E2C1DCE3B6E00A40D46 /* Foundation.framework */; };
+		F1452E2F1DCE3C0400A40D46 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452E2E1DCE3C0400A40D46 /* CoreFoundation.framework */; };
+		F1452E311DCE3C1700A40D46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452E301DCE3C1700A40D46 /* UIKit.framework */; };
+		F1452E331DCE3C2400A40D46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452E321DCE3C2400A40D46 /* QuartzCore.framework */; };
+		F1452E351DCE3C3100A40D46 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452E341DCE3C3100A40D46 /* MediaPlayer.framework */; };
+		F1452E371DCE3C5F00A40D46 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1452E361DCE3C5F00A40D46 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +149,35 @@
 		F1452E051DCE2B9300A40D46 /* Word.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 		F1452E061DCE2B9300A40D46 /* WordList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordList.h; sourceTree = "<group>"; };
 		F1452E071DCE2B9300A40D46 /* WordResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordResult.h; sourceTree = "<group>"; };
+		F1452E081DCE362E00A40D46 /* SampleMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SampleMath.cpp; sourceTree = "<group>"; };
+		F1452E091DCE362E00A40D46 /* SampleMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleMath.h; sourceTree = "<group>"; };
+		F1452E0A1DCE362E00A40D46 /* VideoPlaybackEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlaybackEAGLView.h; sourceTree = "<group>"; };
+		F1452E0B1DCE362E00A40D46 /* VideoPlaybackEAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoPlaybackEAGLView.mm; sourceTree = "<group>"; };
+		F1452E0E1DCE364800A40D46 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		F1452E0F1DCE364800A40D46 /* Texture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Texture.mm; sourceTree = "<group>"; };
+		F1452E111DCE36AE00A40D46 /* SampleApplicationSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleApplicationSession.h; sourceTree = "<group>"; };
+		F1452E121DCE36AE00A40D46 /* SampleApplicationSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SampleApplicationSession.mm; sourceTree = "<group>"; };
+		F1452E141DCE36BF00A40D46 /* VideoPlayerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerHelper.h; sourceTree = "<group>"; };
+		F1452E151DCE36BF00A40D46 /* VideoPlayerHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoPlayerHelper.mm; sourceTree = "<group>"; };
+		F1452E171DCE36F900A40D46 /* SampleGLResourceHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleGLResourceHandler.h; sourceTree = "<group>"; };
+		F1452E181DCE371D00A40D46 /* VideoPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlaybackViewController.h; sourceTree = "<group>"; };
+		F1452E191DCE371D00A40D46 /* VideoPlaybackViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoPlaybackViewController.mm; sourceTree = "<group>"; };
+		F1452E1B1DCE377300A40D46 /* SampleAppRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleAppRenderer.h; sourceTree = "<group>"; };
+		F1452E1C1DCE377300A40D46 /* SampleAppRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SampleAppRenderer.mm; sourceTree = "<group>"; };
+		F1452E1E1DCE378600A40D46 /* SampleApplicationUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SampleApplicationUtils.cpp; sourceTree = "<group>"; };
+		F1452E1F1DCE378600A40D46 /* SampleApplicationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleApplicationUtils.h; sourceTree = "<group>"; };
+		F1452E211DCE37EE00A40D46 /* SampleApplicationShaderUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleApplicationShaderUtils.h; sourceTree = "<group>"; };
+		F1452E221DCE37EE00A40D46 /* SampleApplicationShaderUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleApplicationShaderUtils.m; sourceTree = "<group>"; };
+		F1452E241DCE382000A40D46 /* Quad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quad.h; sourceTree = "<group>"; };
+		F1452E261DCE3AC100A40D46 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		F1452E281DCE3ACF00A40D46 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F1452E2A1DCE3B0400A40D46 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F1452E2C1DCE3B6E00A40D46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F1452E2E1DCE3C0400A40D46 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		F1452E301DCE3C1700A40D46 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F1452E321DCE3C2400A40D46 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F1452E341DCE3C3100A40D46 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F1452E361DCE3C5F00A40D46 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +185,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1452E371DCE3C5F00A40D46 /* SystemConfiguration.framework in Frameworks */,
+				F1452E351DCE3C3100A40D46 /* MediaPlayer.framework in Frameworks */,
+				F1452E331DCE3C2400A40D46 /* QuartzCore.framework in Frameworks */,
+				F1452E311DCE3C1700A40D46 /* UIKit.framework in Frameworks */,
+				F1452E2F1DCE3C0400A40D46 /* CoreFoundation.framework in Frameworks */,
+				F1452E2D1DCE3B6E00A40D46 /* Foundation.framework in Frameworks */,
+				F1452E2B1DCE3B0400A40D46 /* CoreMedia.framework in Frameworks */,
+				F1452E291DCE3ACF00A40D46 /* AVFoundation.framework in Frameworks */,
+				F1452E271DCE3AC100A40D46 /* CoreMotion.framework in Frameworks */,
 				F1452DAD1DCE2AC100A40D46 /* libVuforia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +206,7 @@
 			children = (
 				F1452D7C1DCE15D300A40D46 /* TreasureHuntObjc */,
 				F1452D7B1DCE15D300A40D46 /* Products */,
+				F1452E251DCE3AC100A40D46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +287,26 @@
 		F1452DA81DCE2A8500A40D46 /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				F1452E211DCE37EE00A40D46 /* SampleApplicationShaderUtils.h */,
+				F1452E221DCE37EE00A40D46 /* SampleApplicationShaderUtils.m */,
+				F1452E1E1DCE378600A40D46 /* SampleApplicationUtils.cpp */,
+				F1452E1F1DCE378600A40D46 /* SampleApplicationUtils.h */,
+				F1452E1B1DCE377300A40D46 /* SampleAppRenderer.h */,
+				F1452E1C1DCE377300A40D46 /* SampleAppRenderer.mm */,
+				F1452E181DCE371D00A40D46 /* VideoPlaybackViewController.h */,
+				F1452E191DCE371D00A40D46 /* VideoPlaybackViewController.mm */,
+				F1452E171DCE36F900A40D46 /* SampleGLResourceHandler.h */,
+				F1452E141DCE36BF00A40D46 /* VideoPlayerHelper.h */,
+				F1452E151DCE36BF00A40D46 /* VideoPlayerHelper.mm */,
+				F1452E111DCE36AE00A40D46 /* SampleApplicationSession.h */,
+				F1452E121DCE36AE00A40D46 /* SampleApplicationSession.mm */,
+				F1452E0E1DCE364800A40D46 /* Texture.h */,
+				F1452E0F1DCE364800A40D46 /* Texture.mm */,
+				F1452E241DCE382000A40D46 /* Quad.h */,
+				F1452E081DCE362E00A40D46 /* SampleMath.cpp */,
+				F1452E091DCE362E00A40D46 /* SampleMath.h */,
+				F1452E0A1DCE362E00A40D46 /* VideoPlaybackEAGLView.h */,
+				F1452E0B1DCE362E00A40D46 /* VideoPlaybackEAGLView.mm */,
 				F1452DA91DCE2A9700A40D46 /* ARViewController.h */,
 				F1452DAA1DCE2A9700A40D46 /* ARViewController.mm */,
 			);
@@ -341,6 +418,22 @@
 			path = Vuforia/build/include/Vuforia;
 			sourceTree = "<group>";
 		};
+		F1452E251DCE3AC100A40D46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1452E361DCE3C5F00A40D46 /* SystemConfiguration.framework */,
+				F1452E341DCE3C3100A40D46 /* MediaPlayer.framework */,
+				F1452E321DCE3C2400A40D46 /* QuartzCore.framework */,
+				F1452E301DCE3C1700A40D46 /* UIKit.framework */,
+				F1452E2E1DCE3C0400A40D46 /* CoreFoundation.framework */,
+				F1452E2C1DCE3B6E00A40D46 /* Foundation.framework */,
+				F1452E2A1DCE3B0400A40D46 /* CoreMedia.framework */,
+				F1452E281DCE3ACF00A40D46 /* AVFoundation.framework */,
+				F1452E261DCE3AC100A40D46 /* CoreMotion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -413,13 +506,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1452DA71DCE1D2B00A40D46 /* TreasureListCell.m in Sources */,
+				F1452E131DCE36AE00A40D46 /* SampleApplicationSession.mm in Sources */,
+				F1452E201DCE378600A40D46 /* SampleApplicationUtils.cpp in Sources */,
 				F1452DA31DCE1CBA00A40D46 /* LocationManager.m in Sources */,
 				F1452D851DCE15D300A40D46 /* ViewController.m in Sources */,
+				F1452E0C1DCE362E00A40D46 /* SampleMath.cpp in Sources */,
+				F1452E161DCE36BF00A40D46 /* VideoPlayerHelper.mm in Sources */,
+				F1452E231DCE37EE00A40D46 /* SampleApplicationShaderUtils.m in Sources */,
 				F1452D9D1DCE1C5800A40D46 /* HuntViewController.m in Sources */,
+				F1452E1A1DCE371D00A40D46 /* VideoPlaybackViewController.mm in Sources */,
+				F1452E1D1DCE377300A40D46 /* SampleAppRenderer.mm in Sources */,
 				F1452D821DCE15D300A40D46 /* AppDelegate.m in Sources */,
 				F1452DA01DCE1C7900A40D46 /* TreasureListTableViewController.m in Sources */,
 				F1452D7F1DCE15D300A40D46 /* main.m in Sources */,
+				F1452E0D1DCE362E00A40D46 /* VideoPlaybackEAGLView.mm in Sources */,
 				F1452DAB1DCE2A9700A40D46 /* ARViewController.mm in Sources */,
+				F1452E101DCE364800A40D46 /* Texture.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +634,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4QGK58U3J6;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				INFOPLIST_FILE = TreasureHuntObjc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -551,6 +654,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4QGK58U3J6;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				INFOPLIST_FILE = TreasureHuntObjc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

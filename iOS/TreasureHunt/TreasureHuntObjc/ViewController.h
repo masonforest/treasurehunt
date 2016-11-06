@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)resetContract:(UIButton *)sender;
 
 @end
 

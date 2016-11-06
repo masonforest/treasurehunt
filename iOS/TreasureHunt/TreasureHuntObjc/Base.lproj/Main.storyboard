@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TreasureHuntObjc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -45,6 +45,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvc-4a-sg8">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="ZgW-KQ-RoP"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="resetContract:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CiM-uT-chd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -56,7 +64,10 @@
                             <constraint firstItem="YAf-yE-7cz" firstAttribute="top" secondItem="jh6-wf-7WG" secondAttribute="bottom" constant="8" id="RYp-BY-Xdi"/>
                             <constraint firstItem="hC4-PO-Y0o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SYv-jT-gSJ"/>
                             <constraint firstItem="ZZ3-ck-RyD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sl7-46-o7M"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nvc-4a-sg8" secondAttribute="bottom" id="VxC-dT-1Se"/>
+                            <constraint firstItem="Nvc-4a-sg8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="fug-g1-9jg"/>
                             <constraint firstItem="hC4-PO-Y0o" firstAttribute="width" secondItem="jh6-wf-7WG" secondAttribute="width" id="hbb-fk-bBn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nvc-4a-sg8" secondAttribute="trailing" constant="-16" id="mMc-yv-1Kl"/>
                             <constraint firstItem="jh6-wf-7WG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pub-Yp-Fes"/>
                             <constraint firstItem="YAf-yE-7cz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uPW-d5-pGi"/>
                         </constraints>
@@ -248,7 +259,7 @@
         <scene sceneID="xHG-pi-eDo">
             <objects>
                 <navigationController id="Odx-BV-fcb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="zk3-6A-Xa3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="zk3-6A-Xa3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>

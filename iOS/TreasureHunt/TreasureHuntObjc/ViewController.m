@@ -26,4 +26,19 @@
 }
 
 
+- (IBAction)resetContract:(UIButton *)sender {
+    NSURLSession *ourSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSMutableURLRequest* someRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://treasurehunt.masonforest.com/"]];
+    [someRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [someRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [someRequest setHTTPMethod:@"POST"];
+    
+    
+    
+    NSURLSessionTask *task = [ourSession dataTaskWithRequest:someRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+    }];
+    [task resume];
+    
+}
 @end

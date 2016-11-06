@@ -14,7 +14,13 @@ contract TreasureHunt {
 	// A state variable that maps each player to the treasure they're hunting at the moment.
 	mapping(address => uint) playerState;
 	
+	// Reward for winning the game.
+	uint reward;
+	
     function TreasureHunt() {
+        // Set the reward
+        reward = 100;
+        
         // Add players
         ResetPlayer(0x06b50b1fee1a46d8803d017e6bf363a3f904d8fe);
         ResetPlayer(0xca35b7d915458ef540ade6068dfe2f44e8fa733c);
@@ -22,8 +28,10 @@ contract TreasureHunt {
         // First treasure in the array is a dummy treasure to work around issues with checking if a player exists (see CheckAnswerForPlayer()).
         treasures.push(Treasure({latitude: 0, longitude: 0, hint: "Invalid player ID.", video: ""}));
         
-        //treasures.push(Treasure({latitude: 1, longitude: 2, hint: "The place to be."}));
+        // Add tresures
+        // Demo trasure
         //treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Demo location", video: "video1"}));
+        // Test treasures
         treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Diamond", video: "video1"}));
         treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Floor Plan", video: "video2"}));
         treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Mic", video: "video3"}));
@@ -35,12 +43,12 @@ contract TreasureHunt {
 		var player = msg.sender;
 		
 		if(!PlayerFinishedHunt(player) && IsCorrectAnswer(latitude, longitude, player)) {
-			AdvancePlayerToNextTreasure(player);
+			MovePlayerToNextTreasure(player);
 			
 			if(PlayerFinishedHunt(player))
 			{
 				// This is the last treasure, player gets the reward.
-				msg.sender.send(100);
+				msg.sender.send(reward);
 			}
         }
         
@@ -59,11 +67,19 @@ contract TreasureHunt {
         }
 		else 
 		{
-            nextHint = GetNextHintForPlayer(player);
-            nextVideo = GetNextVideoForPlayer(player);
-
 			if(IsCorrectAnswer(latitude, longitude, player)) {
 				correct = true;
+				
+				// Return the next hint for the user as if they actually advanced
+    			MovePlayerToNextTreasure(player);
+                nextHint = GetNextHintForPlayer(player);
+                nextVideo = GetNextVideoForPlayer(player);
+    			MovePlayerToPreviousTreasure(player);
+			}
+			else
+			{
+                nextHint = GetNextHintForPlayer(player);
+                nextVideo = GetNextVideoForPlayer(player);
 			}
         }
     }
@@ -118,8 +134,12 @@ contract TreasureHunt {
         success = playerState[player] >= treasures.length; 
     }
 
-    function AdvancePlayerToNextTreasure(address player) private {
+    function MovePlayerToNextTreasure(address player) private {
         playerState[player]++;
+    }
+
+    function MovePlayerToPreviousTreasure(address player) private {
+        playerState[player]--;
     }
 
     function IsCorrectAnswer(int latitude, int longitude, address player) private

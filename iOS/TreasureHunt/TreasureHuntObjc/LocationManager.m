@@ -16,7 +16,7 @@
     if (self) {
         self.locationManager = [[CLLocationManager alloc] init];
         [self.locationManager setDelegate:self];
-        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyThreeKilometers];
         [self.locationManager requestWhenInUseAuthorization];
     }
     return self;

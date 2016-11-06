@@ -441,9 +441,11 @@ namespace {
         {
             playerIndex = 0;
         } else if (strcmp(imageTarget.getName(), "IMG_1706") == 0) { // chainsmiths
-            playerIndex = 2;
-        } else if (strcmp(imageTarget.getName(), "IMG_1703") == 0) { //diamond
             playerIndex = 1;
+        } else if (strcmp(imageTarget.getName(), "IMG_1703") == 0) { //diamond
+            playerIndex = 0;
+        } else if (strcmp(imageTarget.getName(), "IMG_1707") == 0) { //mic
+            playerIndex = 2;
         }
         NSLog(@"here %d %s", playerIndex, imageTarget.getName());
         

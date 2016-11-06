@@ -12,9 +12,9 @@ web3.setProvider(new web3.providers.HttpProvider('https://frontier-lb.ether.camp
 const ACCOUNT_ADDRESS = "0x06b50b1fee1a46d8803d017e6bf363a3f904d8fe";
 const ACCOUNT_KEY = "f90f1c84ffdd40d660ce56392e6b9427bd7922004747980c6841b419b0384641";
 
-const CONTRACT_ADDRESS = "0x31111a62437f75a82405564a946637b07fb208bb";
+const CONTRACT_ADDRESS = "0xdd3b4164b966d820e1438179db1654829e2df131";
 treasureHuntAbi =
-[{"constant":true,"inputs":[{"name":"player","type":"address"}],"name":"GetNextHintForPlayer","outputs":[{"name":"nextHint","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"latitude","type":"int256"},{"name":"longitude","type":"int256"},{"name":"player","type":"address"}],"name":"CheckAnswerForPlayer","outputs":[{"name":"correct","type":"bool"},{"name":"nextHint","type":"string"},{"name":"nextVideo","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"latitude","type":"int256"},{"name":"longitude","type":"int256"}],"name":"SubmitAnswer","outputs":[{"name":"nextHint","type":"string"},{"name":"nextVideo","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"player","type":"address"}],"name":"GetNextVideoForPlayer","outputs":[{"name":"nextVideo","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"player","type":"address"}],"name":"ResetPlayer","outputs":[{"name":"nextHint","type":"string"},{"name":"nextVideo","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"player","type":"address"}],"name":"GetNextHintAndVideoForPlayer","outputs":[{"name":"nextHint","type":"string"},{"name":"nextVideo","type":"string"}],"payable":false,"type":"function"},{"inputs":[],"type":"constructor"}]
+[{"constant":true,"inputs":[{"name":"player","type":"address"}],"name":"GetNextHintForPlayer","outputs":[{"name":"nextHint","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"player","type":"address"}],"name":"RewardPlayer","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"latitude","type":"int256"},{"name":"longitude","type":"int256"},{"name":"player","type":"address"}],"name":"CheckAnswerForPlayer","outputs":[{"name":"correct","type":"bool"},{"name":"nextHint","type":"string"},{"name":"nextVideo","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"latitude","type":"int256"},{"name":"longitude","type":"int256"}],"name":"SubmitAnswer","outputs":[{"name":"nextHint","type":"string"},{"name":"nextVideo","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"player","type":"address"}],"name":"GetNextVideoForPlayer","outputs":[{"name":"nextVideo","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"player","type":"address"}],"name":"ResetPlayer","outputs":[{"name":"nextHint","type":"string"},{"name":"nextVideo","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"player","type":"address"}],"name":"GetNextHintAndVideoForPlayer","outputs":[{"name":"nextHint","type":"string"},{"name":"nextVideo","type":"string"}],"payable":false,"type":"function"},{"inputs":[],"type":"constructor"},{"payable":true,"type":"fallback"}]
 
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -41,6 +41,12 @@ app.get('/balance', function (req, res) {
 
 app.post('/reset', function (req, res) {
   callEtherumFunction('ResetPlayer', ACCOUNT_ADDRESS);
+
+  res.send();
+})
+
+app.post('/reward', function (req, res) {
+  callEtherumFunction('RewardPlayer', ACCOUNT_ADDRESS);
 
   res.send();
 })

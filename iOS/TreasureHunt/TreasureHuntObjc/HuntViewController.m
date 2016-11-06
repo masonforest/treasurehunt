@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     lastHintVideo = @"";
-    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     activityIndicator.center = self.view.center;
     //activityIndicator.hidden = YES;
     
@@ -147,13 +147,15 @@
                     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         dispatch_async(dispatch_get_main_queue(), ^(void){
-                            [self performSegueWithIdentifier:@"showAR" sender:self];
-                            //Run UI Updates
-                            self.hintLabel.text = jsonDict[@"hint"];
-                            lastHintVideo = jsonDict[@"video"];
-                            self.hintLabel.hidden = NO;
-                            self.playHintButton.hidden = NO;
-                            self.tryLocationButton.hidden = NO;
+                            if(success) {
+                                [self performSegueWithIdentifier:@"showAR" sender:self];
+                                //Run UI Updates
+                                self.hintLabel.text = jsonDict[@"hint"];
+                                lastHintVideo = jsonDict[@"video"];
+                                self.hintLabel.hidden = NO;
+                                self.playHintButton.hidden = NO;
+                                self.tryLocationButton.hidden = NO;
+                            }
                         });
                     }];
                     [alert addAction:defaultAction];

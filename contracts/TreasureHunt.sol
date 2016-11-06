@@ -17,6 +17,8 @@ contract TreasureHunt {
 	// Reward for winning the game.
 	uint reward;
 	
+	mapping (address => uint) pendingWithdrawals;
+	
     function TreasureHunt() {
         // Set the reward
         reward = 100;
@@ -30,13 +32,20 @@ contract TreasureHunt {
         
         // Add tresures
         // Demo trasure
-        //treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Demo location", video: "video1"}));
+        treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Find the Treasure Hunt poster.", video: "video1"}));
         // Test treasures
-        treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Diamond", video: "video1"}));
-        treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Floor Plan", video: "video2"}));
-        treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Mic", video: "video3"}));
+        //treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Diamond", video: "video1"}));
+        //treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Floor Plan", video: "video2"}));
+        //treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Mic", video: "video3"}));
     }
+    
+    function () payable {}
 
+    function SetReward(uint r)
+    {
+        reward = r;
+    }
+    
     function SubmitAnswer(int latitude, int longitude)
         returns (string nextHint, string nextVideo)
     {
@@ -47,13 +56,39 @@ contract TreasureHunt {
 			
 			if(PlayerFinishedHunt(player))
 			{
-				// This is the last treasure, player gets the reward.
-				msg.sender.send(reward);
+				// This was the last treasure, player gets the reward.
+				RewardPlayer(player);
+				
+				// Transfer the funds to player's address
+				WithdrawForPlayer(player);
 			}
         }
         
 		nextHint = GetNextHintForPlayer(player);
 		nextVideo = GetNextVideoForPlayer(player);
+    }
+    
+    function RewardPlayer(address player) private
+    {
+        pendingWithdrawals[player] = reward;
+    }
+    
+    function WithdrawForPlayer(address player)
+        returns (bool)
+    {
+        if(PlayerFinishedHunt(player))
+        {
+            uint amount = pendingWithdrawals[player];
+            pendingWithdrawals[player] = 0;
+            
+            if(!player.send(amount))
+            {
+                pendingWithdrawals[player] = amount;
+                return false;
+            }
+            
+            return true;
+        }
     }
     
     function CheckAnswerForPlayer(int latitude, int longitude, address player) constant

@@ -55,8 +55,10 @@ namespace {
         "icon_play.png",
         "icon_loading.png",
         "icon_error.png",
-        "VuforiaSizzleReel_1.png",
-        "VuforiaSizzleReel_2.png"
+        "icon_play.png",
+        "icon_play.png",
+        "icon_play.png",
+        "icon_play.png"
     };
     
     enum tagObjectIndex {
@@ -206,13 +208,16 @@ namespace {
         
         switch (i) {
             case 0:
-                filename = @"VuforiaSizzleReel_1.mp4";
+                filename = @"video1.mp4";
+                break;
+            case 1:
+                filename = @"video2.mp4";
                 break;
             default:
-                filename = @"VuforiaSizzleReel_2.mp4";
+                filename = @"video3.mp4";
                 break;
         }
-        
+        NSLog(@"loading %@", filename);
         if (NO == [player load:filename playImmediately:NO fromPosition:videoPlaybackTime[i]]) {
             NSLog(@"Failed to load media");
         }
@@ -431,10 +436,13 @@ namespace {
         // VideoPlayerHelper to use for current target
         int playerIndex = 0;    // stones
         
-        if (strcmp(imageTarget.getName(), "chips") == 0)
+        if (strcmp(imageTarget.getName(), "IMG_1706") == 0)
         {
             playerIndex = 1;
+        } else if (strcmp(imageTarget.getName(), "IMG_1707") == 0) {
+            playerIndex = 2;
         }
+        NSLog(@"here %d %s", playerIndex, imageTarget.getName());
         
         // Mark this video (target) as active
         videoData[playerIndex].isActive = YES;

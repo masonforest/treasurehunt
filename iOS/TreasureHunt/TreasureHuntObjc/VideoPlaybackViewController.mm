@@ -271,7 +271,8 @@ countries.
 
 // load the data associated to the trackers
 - (bool) doLoadTrackersData {
-    return [self loadAndActivateImageTrackerDataSet:@"BlockchainHack1.xml"];;
+    //return [self loadAndActivateImageTrackerDataSet:@"StonesAndChips.xml"];
+    return [self loadAndActivateImageTrackerDataSet:@"BlockchainHack3.xml"];
 }
 
 // start the application trackers

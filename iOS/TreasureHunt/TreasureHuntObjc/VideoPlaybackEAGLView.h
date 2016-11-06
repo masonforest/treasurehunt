@@ -18,8 +18,8 @@ Copyright (c) 2016 PTC Inc. All Rights Reserved.
 #import "SampleAppRenderer.h"
 
 
-static const int kNumAugmentationTextures = 5;
-static const int kNumVideoTargets = 5;
+static const int kNumAugmentationTextures = 7;
+static const int kNumVideoTargets = 4;
 
 // VideoPlayback is a subclass of UIView and conforms to the informal protocol
 // UIGLViewProtocol
@@ -71,6 +71,7 @@ static const int kNumVideoTargets = 5;
 }
 
 @property (nonatomic, weak) SampleApplicationSession * vapp;
+@property (nonatomic, strong) NSString* filename;
 
 - (id)initWithFrame:(CGRect)frame rootViewController:(VideoPlaybackViewController *) rootViewController appSession:(SampleApplicationSession *) app;
 

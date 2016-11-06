@@ -182,7 +182,8 @@ static NSString* const kRateKey = @"rate";
 {
 //    (void)AudioSessionSetActive(true);
     BOOL ret = NO;
-    
+    NSLog(@"loading %@", filename);
+    file = filename;
     // Load only if there is no media currently loaded
     if (NOT_READY != mediaState && ERROR != mediaState) {
         NSLog(@"Media already loaded.  Unload current media first.");
@@ -351,7 +352,7 @@ static NSString* const kRateKey = @"rate";
     BOOL ret = NO;
     
     int requestedPlayerType = YES == fullscreen ? PLAYER_TYPE_NATIVE : PLAYER_TYPE_ON_TEXTURE;
-    
+    NSLog(@"playing here! %@", file);
     // If switching player type or not currently playing, and not in an unknown
     // or error state
     if ((PLAYING != mediaState || playerType != requestedPlayerType) && NOT_READY > mediaState) {
@@ -892,6 +893,7 @@ static NSString* const kRateKey = @"rate";
 {
     BOOL ret = NO;
     asset = [[AVURLAsset alloc] initWithURL:url options:nil];
+    NSLog(@"load asset %@", asset.URL.lastPathComponent);
     
     if (nil != asset) {
         // We can now attempt to load the media, so report success.  We will

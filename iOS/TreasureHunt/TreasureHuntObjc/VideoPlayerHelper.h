@@ -94,6 +94,8 @@ static const float VIDEO_PLAYBACK_CURRENT_POSITION = -1.0f;
         PLAYER_TYPE_ON_TEXTURE,
         PLAYER_TYPE_NATIVE
     } playerType;
+    
+    NSString *file;
 }
 
 - (id)initWithRootViewController:(VideoPlaybackViewController *) rootViewController;

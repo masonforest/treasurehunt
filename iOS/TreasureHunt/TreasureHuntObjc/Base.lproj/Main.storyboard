@@ -148,7 +148,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-8x-vLd">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-8x-vLd">
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -169,22 +169,46 @@
                                     <action selector="playHint:" destination="w2f-56-p4p" eventType="touchUpInside" id="9le-ez-Jyz"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xd8-lK-8fF">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have completed this TreasureHunt!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh6-ye-QW4">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="314" id="ASy-w4-gQo"/>
+                                            <constraint firstAttribute="height" constant="150" id="dJ1-lZ-WFe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="dh6-ye-QW4" firstAttribute="centerY" secondItem="Xd8-lK-8fF" secondAttribute="centerY" id="1yC-eT-cb9"/>
+                                    <constraint firstItem="dh6-ye-QW4" firstAttribute="centerX" secondItem="Xd8-lK-8fF" secondAttribute="centerX" id="H67-fG-nIh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Wrm-AO-g3h" firstAttribute="top" secondItem="Xd8-lK-8fF" secondAttribute="bottom" id="0BD-B5-iQn"/>
                             <constraint firstItem="Nmv-L7-Ka4" firstAttribute="centerX" secondItem="jup-o3-uBf" secondAttribute="centerX" id="0ml-4g-WyL"/>
                             <constraint firstItem="EFK-VH-xYP" firstAttribute="top" secondItem="uTx-8x-vLd" secondAttribute="bottom" constant="8" id="EFh-X5-UEv"/>
                             <constraint firstItem="uTx-8x-vLd" firstAttribute="top" secondItem="Ij1-gd-rPy" secondAttribute="bottom" constant="49" id="FFV-8d-C0Y"/>
                             <constraint firstItem="3Em-dj-gd2" firstAttribute="top" secondItem="EFK-VH-xYP" secondAttribute="bottom" constant="10" id="Hnl-TX-NeZ"/>
+                            <constraint firstItem="Xd8-lK-8fF" firstAttribute="top" secondItem="Ij1-gd-rPy" secondAttribute="bottom" constant="8" id="LID-Ff-ZFn"/>
                             <constraint firstItem="Nmv-L7-Ka4" firstAttribute="centerY" secondItem="jup-o3-uBf" secondAttribute="centerY" id="Qfz-Yv-NTj"/>
                             <constraint firstItem="uTx-8x-vLd" firstAttribute="centerX" secondItem="jup-o3-uBf" secondAttribute="centerX" id="Ujg-WN-OJ4"/>
                             <constraint firstItem="3Em-dj-gd2" firstAttribute="centerX" secondItem="jup-o3-uBf" secondAttribute="centerX" id="ZTR-VK-NcV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xd8-lK-8fF" secondAttribute="trailing" constant="-16" id="mi6-1g-sHY"/>
                             <constraint firstItem="EFK-VH-xYP" firstAttribute="centerX" secondItem="jup-o3-uBf" secondAttribute="centerX" id="n1t-BX-ZgO"/>
+                            <constraint firstItem="Xd8-lK-8fF" firstAttribute="leading" secondItem="jup-o3-uBf" secondAttribute="leadingMargin" constant="-16" id="oGK-Kp-KZY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="hintHeaderLabel" destination="uTx-8x-vLd" id="ABR-Bs-eNT"/>
                         <outlet property="hintLabel" destination="3Em-dj-gd2" id="1Jf-iU-Bz8"/>
                         <outlet property="playHintButton" destination="EFK-VH-xYP" id="f5I-re-UNi"/>
+                        <outlet property="successView" destination="Xd8-lK-8fF" id="shk-s8-I6I"/>
                         <outlet property="tryLocationButton" destination="Nmv-L7-Ka4" id="5OL-PD-0aK"/>
                         <segue destination="5Zp-Ec-2z1" kind="show" identifier="showAR" id="7Nd-vc-Qxz"/>
                     </connections>

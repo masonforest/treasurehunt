@@ -54,12 +54,19 @@
             
             dispatch_async(dispatch_get_main_queue(), ^(void){
                 [activityIndicator removeFromSuperview];
-                //Run UI Updates
-                self.hintLabel.text = jsonDict[@"hint"];
-                lastHintVideo = jsonDict[@"video"];
-                self.hintLabel.hidden = NO;
-                self.playHintButton.hidden = NO;
-                self.tryLocationButton.hidden = NO;
+                
+                if([jsonDict[@"hint"] isEqualToString:@"SUCCESS"]) {
+                    self.successView.hidden = NO;
+                } else {
+                    //Run UI Updates
+                    self.hintLabel.text = jsonDict[@"hint"];
+                    lastHintVideo = jsonDict[@"video"];
+                    self.hintLabel.hidden = NO;
+                    self.hintHeaderLabel.hidden = NO;
+                    self.playHintButton.hidden = NO;
+                    self.tryLocationButton.hidden = NO;
+                    self.successView.hidden = YES;
+                }
             });
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -90,7 +97,7 @@
 }
 
 -(IBAction)tryLocationButton:(id)sender {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Fee" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Fee" message:@"Trying your location will cost 0.00000006 Ether" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"API CALL");
         //activityIndicator.hidden = NO;
@@ -148,13 +155,20 @@
                     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         dispatch_async(dispatch_get_main_queue(), ^(void){
                             if(success) {
-                                [self performSegueWithIdentifier:@"showAR" sender:self];
-                                //Run UI Updates
-                                self.hintLabel.text = jsonDict[@"hint"];
-                                lastHintVideo = jsonDict[@"video"];
-                                self.hintLabel.hidden = NO;
-                                self.playHintButton.hidden = NO;
-                                self.tryLocationButton.hidden = NO;
+                                
+                                if([jsonDict[@"hint"] isEqualToString:@"SUCCESS"]) {
+                                    self.successView.hidden = NO;
+                                } else {
+                                    [self performSegueWithIdentifier:@"showAR" sender:self];
+                                    //Run UI Updates
+                                    self.hintLabel.text = jsonDict[@"hint"];
+                                    lastHintVideo = jsonDict[@"video"];
+                                    self.hintLabel.hidden = NO;
+                                    self.hintHeaderLabel.hidden = NO;
+                                    self.playHintButton.hidden = NO;
+                                    self.tryLocationButton.hidden = NO;
+                                    self.successView.hidden = YES;
+                                }
                             }
                         });
                     }];

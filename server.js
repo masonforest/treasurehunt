@@ -46,11 +46,15 @@ app.post('/reset', function (req, res) {
 })
 
 app.post('/', function (req, res) {
+  result = treasureHunt.CheckAnswerForPlayer(parseInt(req.body.latitude), parseInt(req.body.longitude), ACCOUNT_ADDRESS)
+  res.send(JSON.stringify({
+    success: result[0],
+    hint: result[1]
+  }));
+
   callEtherumFunction('SubmitAnswer',
     parseInt(req.body.latitude),
     parseInt(req.body.longitude));
-
-  res.send();
 })
 
 function callEtherumFunction(functionName, ...functionArgs) {

@@ -74,16 +74,8 @@ countries.
     eaglView = [[VideoPlaybackEAGLView alloc] initWithFrame:viewFrame rootViewController:self appSession:vapp];
     [self setView:eaglView];
     
-    // double tap used to also trigger the menu
-    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget: self action:@selector(doubleTapGestureAction:)];
-    doubleTap.numberOfTapsRequired = 2;
-    [self.view addGestureRecognizer:doubleTap];
-    
     // a single tap will trigger a single autofocus operation
     tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    if (doubleTap != NULL) {
-        [tapGestureRecognizer requireGestureRecognizerToFail:doubleTap];
-    }
     
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureAction:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
@@ -421,11 +413,6 @@ countries.
 - (void)restoreContinuousAutoFocus
 {
     Vuforia::CameraDevice::getInstance().setFocusMode(Vuforia::CameraDevice::FOCUS_MODE_CONTINUOUSAUTO);
-}
-
-- (void)doubleTapGestureAction:(UITapGestureRecognizer*)theGesture
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)swipeGestureAction:(UISwipeGestureRecognizer*)gesture

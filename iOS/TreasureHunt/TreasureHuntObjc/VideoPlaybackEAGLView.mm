@@ -276,7 +276,7 @@ namespace {
 #pragma mark - User interaction
 
 - (bool) handleTouchPoint:(CGPoint) point {
-    // Store the current touch location
+/*    // Store the current touch location
     touchLocation_X = point.x;
     touchLocation_Y = point.y;
     
@@ -308,13 +308,14 @@ namespace {
         if (ERROR != mediaState && NOT_READY != mediaState && PLAYING != mediaState) {
             // Play the video
             NSLog(@"Playing video with on-texture player");
-            [videoPlayerHelper[touchedTarget] play:playVideoFullScreen fromPosition:VIDEO_PLAYBACK_CURRENT_POSITION];
+            [videoPlayerHelper[touchedTarget] play:playVideoFullScreen fromPosition:0.0];
         }
 #endif
         return true;
     } else {
         return false;
-    }
+    }*/
+    return true;
 }
 - (void) preparePlayers {
     [self prepare];
@@ -594,6 +595,7 @@ namespace {
                 case STOPPED: {
                     // ----- Display play icon -----
                     iconTextureID = [augmentationTexture[OBJECT_PLAY_ICON] textureID];
+                    [videoPlayerHelper[playerIndex] play:false fromPosition:0.0];
                     break;
                 }
                     

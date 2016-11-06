@@ -4,34 +4,34 @@ contract TreasureHunt {
 		int latitude;
 		int longitude;
 		string hint;
+		string video;
 	}
-	
-	// Array of players.
-	address[] players;
 	
 	// Array of treasures.
 	Treasure[] treasures;
 	
-	// A state variable that stores the index of the treasure for each player. It's the treasure the player is hunting at the moment.
+	// Mapping of a player address to the index in the treasures array.
+	// A state variable that maps each player to the treasure they're hunting at the moment.
 	mapping(address => uint) playerState;
 	
     function TreasureHunt() {
-        players.push(0x06b50b1fee1a46d8803d017e6bf363a3f904d8fe);
-        players.push(0xca35b7d915458ef540ade6068dfe2f44e8fa733c);
+        // Add players
+        ResetPlayer(0x06b50b1fee1a46d8803d017e6bf363a3f904d8fe);
+        ResetPlayer(0xca35b7d915458ef540ade6068dfe2f44e8fa733c);
         
-        // First treasure in the array is a dummy treasure to work around issues with checking if a player exists (see CheckAnswer()).
-        treasures.push(Treasure({latitude: 0, longitude: 0, hint: "Invalid player ID."}));
+        // First treasure in the array is a dummy treasure to work around issues with checking if a player exists (see CheckAnswerForPlayer()).
+        treasures.push(Treasure({latitude: 0, longitude: 0, hint: "Invalid player ID.", video: ""}));
         
-        // Test location has latitiude: 53.37650716687302, longitude: -6.271040895288929. Trimmed to 3 decimal places and multiplied by 1000 to get an integer value.
-        treasures.push(Treasure({latitude: 53376, longitude: -6271, hint: "The place to be."}));
         //treasures.push(Treasure({latitude: 1, longitude: 2, hint: "The place to be."}));
-        
-        // Initialize first player's state.
-        playerState[players[0]] = 1;
-        playerState[players[1]] = 1;
+        //treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Demo location", video: "video1"}));
+        treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Diamond", video: "video1"}));
+        treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Floor Plan", video: "video2"}));
+        treasures.push(Treasure({latitude: 53, longitude: -6, hint: "Mic", video: "video3"}));
     }
 
-    function SubmitAnswer(int latitude, int longitude) {
+    function SubmitAnswer(int latitude, int longitude)
+        returns (string nextHint, string nextVideo)
+    {
 		var player = msg.sender;
 		
 		if(!PlayerFinishedHunt(player) && IsCorrectAnswer(latitude, longitude, player)) {
@@ -40,78 +40,76 @@ contract TreasureHunt {
 			if(PlayerFinishedHunt(player))
 			{
 				// This is the last treasure, player gets the reward.
-				msg.sender.send(1 ether);
+				msg.sender.send(100);
+			}
+        }
+        
+		nextHint = GetNextHintForPlayer(player);
+		nextVideo = GetNextVideoForPlayer(player);
+    }
+    
+    function CheckAnswerForPlayer(int latitude, int longitude, address player) constant
+        returns (bool correct, string nextHint, string nextVideo)
+    {
+        correct = false;
+
+        if(PlayerFinishedHunt(player))
+        {
+            nextHint = "SUCCESS";
+        }
+		else 
+		{
+            nextHint = GetNextHintForPlayer(player);
+            nextVideo = GetNextVideoForPlayer(player);
+
+			if(IsCorrectAnswer(latitude, longitude, player)) {
+				correct = true;
 			}
         }
     }
     
-    function CheckAnswer(int latitude, int longitude, address player) constant
-        returns (bool correct, string nextHint)
+    function GetNextHintAndVideoForPlayer(address player) constant
+        returns (string nextHint, string nextVideo)
     {
-        correct = false;
-		var treasureId = playerState[player];
-		
-        if(PlayerFinishedHunt(player))
-        {
-            nextHint = "SUCCESS";
-        }
-		else if(IsCorrectAnswer(latitude, longitude, player)) {
-		    correct = true;
-            nextHint = treasures[treasureId].hint;
-        }
-    }
-    
-    function GetNextHint() constant
-        returns (string nextHint)
-    {
-        var player = msg.sender;
-		var treasureId = playerState[player];
-		
-        if(PlayerFinishedHunt(player))
-        {
-            nextHint = "SUCCESS";
-        }
-		else
-		{
-            nextHint = treasures[treasureId].hint;
-        }
+        nextHint = GetNextHintForPlayer(player);
+        nextVideo = GetNextVideoForPlayer(player);
     }
     
     function GetNextHintForPlayer(address player) constant
-        returns (address returnPlayer, string nextHint)
+        returns (string nextHint)
     {
-        returnPlayer = player;
-		var treasureId = playerState[player];
-		
         if(PlayerFinishedHunt(player))
         {
             nextHint = "SUCCESS";
         }
 		else
 		{
+    		var treasureId = playerState[player];
             nextHint = treasures[treasureId].hint;
         }
     }
     
-    function Echo() constant
-        returns (address echo)
+    function GetNextVideoForPlayer(address player) constant
+        returns (string nextVideo)
     {
-        echo = msg.sender;
-        return echo;
+        if(PlayerFinishedHunt(player))
+        {
+            nextVideo = "";
+        }
+		else
+		{
+    		var treasureId = playerState[player];
+            nextVideo = treasures[treasureId].video;
+        }
     }
     
-    function EchoAddress(address add) constant
-        returns (address echo)
+    function ResetPlayer(address player) constant
+        returns (string nextHint, string nextVideo)
     {
-        echo = add;
-        return echo;
-    }
-    
-    function EchoString(string str) constant
-        returns (string echo)
-    {
-        echo = str;
-        return echo;
+		playerState[player] = 1;
+
+        nextHint = GetNextHintForPlayer(player);
+        nextVideo = GetNextVideoForPlayer(player);
     }
     
     function PlayerFinishedHunt(address player) constant private

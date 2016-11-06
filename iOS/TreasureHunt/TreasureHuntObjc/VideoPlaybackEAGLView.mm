@@ -434,13 +434,15 @@ namespace {
         const Vuforia::ImageTarget& imageTarget = (const Vuforia::ImageTarget&) trackableResult->getTrackable();
         
         // VideoPlayerHelper to use for current target
-        int playerIndex = 0;    // stones
+        int playerIndex = 1;
         
-        if (strcmp(imageTarget.getName(), "IMG_1706") == 0)
+        if (strcmp(imageTarget.getName(), "IMG_1708") == 0) //treasure hunt sign
         {
-            playerIndex = 1;
-        } else if (strcmp(imageTarget.getName(), "IMG_1707") == 0) {
+            playerIndex = 0;
+        } else if (strcmp(imageTarget.getName(), "IMG_1706") == 0) { // chainsmiths
             playerIndex = 2;
+        } else if (strcmp(imageTarget.getName(), "IMG_1703") == 0) { //diamond
+            playerIndex = 1;
         }
         NSLog(@"here %d %s", playerIndex, imageTarget.getName());
         

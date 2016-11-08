@@ -1,24 +1,25 @@
 pragma solidity ^0.4.0;
 contract TreasureHunt {
-	struct Treasure {
-		int latitude;
-		int longitude;
-		string hint;
-		string video;
-	}
-	
-	// Array of treasures.
-	Treasure[] treasures;
-	
-	// Mapping of a player address to the index in the treasures array.
-	// A state variable that maps each player to the treasure they're hunting at the moment.
-	mapping(address => uint) playerState;
-	
-	// Reward for winning the game.
-	uint reward;
-	
-	mapping (address => uint) pendingWithdrawals;
-	
+    struct Treasure {
+        int latitude;
+        int longitude;
+        string hint;
+        string video;
+    }
+    
+    // Array of treasures.
+    Treasure[] treasures;
+    
+    // Mapping of a player address to the index in the treasures array.
+    // A state variable that maps each player to the treasure they're hunting at the moment.
+    mapping(address => uint) playerState;
+    
+    // Reward for winning the game.
+    uint reward;
+    
+    // Using withdrawal pattern.
+    mapping (address => uint) pendingWithdrawals;
+    
     function TreasureHunt() {
         // Set the reward
         reward = 100;
@@ -49,23 +50,23 @@ contract TreasureHunt {
     function SubmitAnswer(int latitude, int longitude)
         returns (string nextHint, string nextVideo)
     {
-		var player = msg.sender;
-		
-		if(!PlayerFinishedHunt(player) && IsCorrectAnswer(latitude, longitude, player)) {
-			MovePlayerToNextTreasure(player);
-			
-			if(PlayerFinishedHunt(player))
-			{
-				// This was the last treasure, player gets the reward.
-				RewardPlayer(player);
-				
-				// Transfer the funds to player's address
-				WithdrawForPlayer(player);
-			}
+        var player = msg.sender;
+        
+        if(!PlayerFinishedHunt(player) && IsCorrectAnswer(latitude, longitude, player)) {
+            MovePlayerToNextTreasure(player);
+            
+            if(PlayerFinishedHunt(player))
+            {
+                // This was the last treasure, player gets the reward.
+                RewardPlayer(player);
+                
+                // Transfer the funds to player's address.
+                WithdrawForPlayer(player);
+            }
         }
         
-		nextHint = GetNextHintForPlayer(player);
-		nextVideo = GetNextVideoForPlayer(player);
+        nextHint = GetNextHintForPlayer(player);
+        nextVideo = GetNextVideoForPlayer(player);
     }
     
     function RewardPlayer(address player) private
@@ -89,6 +90,8 @@ contract TreasureHunt {
             
             return true;
         }
+		
+		return false;
     }
     
     function CheckAnswerForPlayer(int latitude, int longitude, address player) constant
@@ -100,22 +103,22 @@ contract TreasureHunt {
         {
             nextHint = "SUCCESS";
         }
-		else 
-		{
-			if(IsCorrectAnswer(latitude, longitude, player)) {
-				correct = true;
-				
-				// Return the next hint for the user as if they actually advanced
-    			MovePlayerToNextTreasure(player);
+        else 
+        {
+            if(IsCorrectAnswer(latitude, longitude, player)) {
+                correct = true;
+                
+                // Return the next hint for the user as if they actually advanced to the next treasure.
+                MovePlayerToNextTreasure(player);
                 nextHint = GetNextHintForPlayer(player);
                 nextVideo = GetNextVideoForPlayer(player);
-    			MovePlayerToPreviousTreasure(player);
-			}
-			else
-			{
+                MovePlayerToPreviousTreasure(player);
+            }
+            else
+            {
                 nextHint = GetNextHintForPlayer(player);
                 nextVideo = GetNextVideoForPlayer(player);
-			}
+            }
         }
     }
     
@@ -133,9 +136,9 @@ contract TreasureHunt {
         {
             nextHint = "SUCCESS";
         }
-		else
-		{
-    		var treasureId = playerState[player];
+        else
+        {
+            var treasureId = playerState[player];
             nextHint = treasures[treasureId].hint;
         }
     }
@@ -147,9 +150,9 @@ contract TreasureHunt {
         {
             nextVideo = "";
         }
-		else
-		{
-    		var treasureId = playerState[player];
+        else
+        {
+            var treasureId = playerState[player];
             nextVideo = treasures[treasureId].video;
         }
     }
@@ -157,12 +160,14 @@ contract TreasureHunt {
     function ResetPlayer(address player) constant
         returns (string nextHint, string nextVideo)
     {
-		playerState[player] = 1;
+        playerState[player] = 1;
 
         nextHint = GetNextHintForPlayer(player);
         nextVideo = GetNextVideoForPlayer(player);
     }
     
+	// Helper functions
+	
     function PlayerFinishedHunt(address player) constant private
         returns (bool success)
     {
